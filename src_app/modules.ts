@@ -1,0 +1,18 @@
+export default [
+  ["introduction", "Introduction to React Native and Expo"],
+  ["styling", "Styling Components"],
+  ["lists", "Working with Lists"],
+  ["user_input", "Collecting User Input"],
+  ["pressables", "Working with Pressables"],
+  ["screens_and_stacks", "Navigating with Screens and Stacks"],
+  ["navigation", "Creating Multi-Screen Apps"],
+  ["overlays", "Working with Overlays"],
+  ["animations", "Animating Components"],
+  ["complex_animations", "Creating Complex Animations"],
+  ["gestures", "Working with Gestures"],
+  ["links", "Linking and Deep Linking"],
+  ["security", "Authorising Users and Securing Data"],
+  ["accessibility", "Creating Accessible Apps"],
+  ["debugging", "Debugging React Native Apps"],
+  ["performance", "Measuring, Debugging, and Improving Performance"],
+] as const;
