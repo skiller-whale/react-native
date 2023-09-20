@@ -27,7 +27,6 @@ services:
     ports:
       - "19006:19006"
     volumes:
-      - "./node_modules:/app/exercises/node_modules" # mounted so that we can use the host's node_modules when developing outside the container
       - "./assets:/app/exercises/assets:ro"
       - "./lib:/app/exercises/lib:ro"
       - "./src_app:/app/exercises/src_app:ro"
