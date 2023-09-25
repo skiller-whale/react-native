@@ -50,7 +50,7 @@ const Stack = createNativeStackNavigator<ModuleStackParamList>();
 
 const App = () => {
   const [navigationState, setNavigationState, navigationStateLoaded] =
-    useAsyncStorage<NavigationState>("rootNavigationState", {} as NavigationState);
+    useAsyncStorage<NavigationState | undefined>("rootNavigationState", undefined);
 
   return navigationStateLoaded ? (
     <NavigationContainer
