@@ -1,18 +1,15 @@
 import { useContext } from "react";
 import { ScrollView, Text, View } from "../../../lib/base.tsx";
-import Article from "../components/Article.tsx";
-import type { StackScreenProps } from "../routes.ts";
+import styles from "../../../lib/styles.ts";
 import { StateContext } from "../State.ts";
+import Article from "../components/Article.tsx";
+import RelatedArticles from "../components/RelatedArticles.tsx";
 import articles from "../data/articles.ts";
 import whales from "../data/whales.ts";
-import RelatedArticles from "../components/RelatedArticles.tsx";
-import styles, { colors } from "../../../lib/styles.ts";
+import type { ScreenProps } from "../routes.ts";
 
-type Props = {
-  id: string;
-};
-
-const WhaleScreen = ({ id }: Props) => {
+const WhaleScreen = () => {
+  const id = "orca";
   const whale = whales.find((whale) => whale.id === id);
   if (!whale) {
     return (
@@ -22,11 +19,12 @@ const WhaleScreen = ({ id }: Props) => {
     );
   }
 
-  const relatedArticles = articles.filter((article) => article.whales.includes(whale.id));
+  const relatedArticles = articles.filter((article) =>
+    article.whales.includes(whale.id),
+  );
 
   return (
     <ScrollView style={styles.container}>
-      <WhaleScreenHeader title={whale.name} />
       <Article title={whale.name} content={whale.about} />
       <View style={{ marginTop: 60 }}>
         <RelatedArticles articles={relatedArticles} />
@@ -34,11 +32,5 @@ const WhaleScreen = ({ id }: Props) => {
     </ScrollView>
   );
 };
-
-const WhaleScreenHeader = ({ title }: { title: string }) => (
-  <View style={{ backgroundColor: colors.orcaBlue, padding: 16 }}>
-    <Text color="white">{title}</Text>
-  </View>
-);
 
 export default WhaleScreen;

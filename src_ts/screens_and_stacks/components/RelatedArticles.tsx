@@ -10,10 +10,7 @@ const RelatedArticles = ({ articles }: Props) => (
   <View style={articlesStyles.container}>
     <Text size="lg">Related Articles</Text>
     {articles.length ? (
-      articles.map((article) => {
-        const route = article.id === "1" ? "Article1" : "Article2";
-        return <Link>{article.title}</Link>;
-      })
+      articles.map((article) => <Link key={article.id}>{article.title}</Link>)
     ) : (
       <Text>None</Text>
     )}

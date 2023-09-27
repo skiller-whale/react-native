@@ -1,9 +1,9 @@
 import { Link } from "@react-navigation/native";
 import { FlatList, Switch, Text, View } from "../lib/base.tsx";
-import type { ModuleStackScreenProps } from "./types.ts";
-import modules from "./modules.ts";
 import styles, { colors } from "../lib/styles.ts";
 import useAsyncStorage from "../lib/useAsyncStorage.ts";
+import modules from "./modules.ts";
+import type { ModuleStackScreenProps } from "./types.ts";
 
 const Index = (_: ModuleStackScreenProps<"index">) => {
   const [typeScript, setTypeScript] = useAsyncStorage("ts", false);
@@ -20,7 +20,10 @@ const Index = (_: ModuleStackScreenProps<"index">) => {
         }}
       >
         <Text>TypeScript</Text>
-        <Switch value={typeScript} onValueChange={(value) => setTypeScript(value)} />
+        <Switch
+          value={typeScript}
+          onValueChange={(value) => setTypeScript(value)}
+        />
       </View>
       <FlatList
         data={modules}

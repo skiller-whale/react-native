@@ -10,10 +10,7 @@ const RelatedWhales = ({ whales }: Props) => (
   <View style={articlesStyles.container}>
     <Text size="lg">Related Whales</Text>
     {whales.length ? (
-      whales.map((whale) => {
-        const route = whale.id === "orca" ? "Orca" : "Skiller";
-        return <Link>{whale.name}</Link>;
-      })
+      whales.map((whale) => <Link key={whale.id}>{whale.name}</Link>)
     ) : (
       <Text>None</Text>
     )}

@@ -2,33 +2,25 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export const StackID = "Stack";
 
-export type StackRoute = keyof StackParamList;
-
-export const Routes = {
+export const Screens = {
   Home: "Home",
-  Article1: "Article1",
-  Article2: "Article2",
-  Orca: "Orca",
-  Skiller: "Skiller",
   Article: "Article",
   Whale: "Whale",
-};
+} as const;
 
-export type StackParamList = {
+export type Screen = keyof typeof Screens;
+
+export type ScreenParams = {
   Home: undefined;
-  Article1: undefined;
-  Article2: undefined;
-  Orca: undefined;
-  Skiller: undefined;
-  Article: { id: string };
-  Whale: { id: string };
+  Article: undefined;
+  Whale: undefined;
 };
 
-export type StackScreenProps<Route extends StackRoute = "Home"> = NativeStackScreenProps<
-  StackParamList,
+export type ScreenProps<Route extends Screen = "Home"> = NativeStackScreenProps<
+  ScreenParams,
   Route,
   typeof StackID
 >;
 
-export type StackNavigationProp<Route extends StackRoute = "Home"> =
-  StackScreenProps<Route>["navigation"];
+export type NavigationProp<Route extends Screen = "Home"> =
+  ScreenProps<Route>["navigation"];

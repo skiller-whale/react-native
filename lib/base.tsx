@@ -1,9 +1,3 @@
-// simple styled wrappers around the native components
-import {
-  type ImageProps as RNImageProps,
-  type SwitchProps as RNSwitchProps,
-  type TextProps as RNTextProps,
-} from "react-native";
 import {
   Button as RNButton,
   FlatList as RNFlatList,
@@ -13,8 +7,11 @@ import {
   Switch as RNSwitch,
   Text as RNText,
   View as RNView,
+  type ImageProps as RNImageProps,
+  type SwitchProps as RNSwitchProps,
+  type TextProps as RNTextProps,
 } from "react-native";
-import styles, { colors, fontSizes, fontFamilies } from "./styles.ts";
+import styles, { colors, fontFamilies, fontSizes } from "./styles.ts";
 
 // Button
 export const Button = RNButton;
@@ -33,7 +30,8 @@ type ImageProps = Omit<RNImageProps, "source"> & {
 export const Image = ({ asset, width, height, ...rest }: ImageProps) => {
   const { source, style, ..._rest } = rest;
   const _source = source ? source : require(`../assets/${asset}`);
-  const _style = typeof style === "object" ? { width, height, ...style } : { width, height };
+  const _style =
+    typeof style === "object" ? { width, height, ...style } : { width, height };
   return <RNImage source={_source} style={_style} {..._rest} />;
 };
 
@@ -59,7 +57,14 @@ type TextProps = RNTextProps & {
   color?: keyof typeof colors;
 };
 
-export const Text = ({ children, font, size, color, style, ...rest }: TextProps) => {
+export const Text = ({
+  children,
+  font,
+  size,
+  color,
+  style,
+  ...rest
+}: TextProps) => {
   const _style =
     typeof style === "object"
       ? { ...styles.text({ font, size, color }), ...style }

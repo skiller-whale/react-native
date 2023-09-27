@@ -14,7 +14,7 @@ const randomState = (): State => {
     .sort(() => Math.random() - 0.5)
     .slice(0, Math.floor(Math.random() * articles.length + 1));
   const randomWhales = whales.filter((whale) =>
-    randomArticles.some((article) => article.whales.includes(whale.id))
+    randomArticles.some((article) => article.whales.includes(whale.id)),
   );
 
   return {

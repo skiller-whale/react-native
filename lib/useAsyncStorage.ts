@@ -1,9 +1,9 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState } from "react";
 import { useAsyncEffect } from "use-async-effect";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const useAsyncStorage = <Value,>(key: string, initialValue?: Value) => {
-  const [value, _setValue] = useState<Value | undefined>(initialValue);
+const useAsyncStorage = <Value>(key: string, initialValue: Value) => {
+  const [value, _setValue] = useState<Value>(initialValue);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useAsyncEffect(async () => {

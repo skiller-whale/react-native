@@ -8,8 +8,5 @@ export type ModuleRoute =
 
 export type ModuleStackParamList = Record<ModuleRoute, undefined>;
 
-export type ModuleStackScreenProps<Route extends ModuleRoute> = NativeStackScreenProps<
-ModuleStackParamList,
-  Route,
-  "ModuleStack"
->;
+export type ModuleStackScreenProps<Route extends ModuleRoute> =
+  NativeStackScreenProps<ModuleStackParamList, Route, "ModuleStack">;
