@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Skiller Whale Coaching",
-    "slug": "Skiller Whale Coaching",
+    "name": "Skiller Whale React Native Coaching",
+    "slug": "skiller-whale-react-native-coaching",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#12e6de"
     },

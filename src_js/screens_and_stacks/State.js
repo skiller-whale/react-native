@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import articles from "./data/articles.js";
-import whales from "./data/whales.js";
+import articles from "../../lib/data/articles.ts";
+import whales from "../../lib/data/whales.ts";
 
 const randomState = () => {
-  const randomArticles = articles
+  const randomArticles = [...articles]
     .sort(() => Math.random() - 0.5)
     .slice(0, Math.floor(Math.random() * articles.length + 1));
   const randomWhales = whales.filter((whale) =>

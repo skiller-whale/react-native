@@ -1,13 +1,15 @@
 import { Link } from "@react-navigation/native";
+import { useContext } from "react";
 import { FlatList, Switch, Text, View } from "../lib/base.tsx";
 import styles, { colors } from "../lib/styles.ts";
-import useAsyncStorage from "../lib/useAsyncStorage.ts";
+import { DispatchContext, StateContext } from "./State.tsx";
 import modules from "./modules.ts";
-import type { ModuleStackScreenProps } from "./types.ts";
 
-const Index = (_: ModuleStackScreenProps<"index">) => {
-  const [typeScript, setTypeScript] = useAsyncStorage("ts", false);
-  const language = typeScript ? "ts" : "js";
+const Index = () => {
+  const state = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
+  const language = state.typeScript ? "ts" : "js";
 
   return (
     <View style={styles.container}>
@@ -15,14 +17,16 @@ const Index = (_: ModuleStackScreenProps<"index">) => {
         style={{
           flexDirection: "row",
           justifyContent: "flex-end",
-          gap: 20,
-          padding: 20,
+          alignItems: "center",
+          gap: 16,
+          paddingHorizontal: 16,
+          paddingVertical: 8,
         }}
       >
         <Text>TypeScript</Text>
         <Switch
-          value={typeScript}
-          onValueChange={(value) => setTypeScript(value)}
+          value={state.typeScript}
+          onValueChange={(value) => dispatch({ type: "set-typescript", typeScript: value })}
         />
       </View>
       <FlatList

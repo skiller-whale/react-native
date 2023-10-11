@@ -4,8 +4,8 @@ import styles from "../../../lib/styles.ts";
 import { StateContext } from "../State.ts";
 import Article from "../components/Article.tsx";
 import RelatedArticles from "../components/RelatedArticles.tsx";
-import articles from "../data/articles.ts";
-import whales from "../data/whales.ts";
+import articles from "../../../lib/data/articles.ts";
+import whales from "../../../lib/data/whales.ts";
 import type { ScreenProps } from "../routes.ts";
 
 const WhaleScreen = () => {

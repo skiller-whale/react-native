@@ -5,8 +5,8 @@ import { SectionList, Text, View } from "../../../lib/base.tsx";
 import styles, { colors } from "../../../lib/styles.ts";
 import { DispatchContext, StateContext } from "../State.js";
 import Link from "../components/Link.jsx";
-import articles from "../data/articles.js";
-import whales from "../data/whales.js";
+import articles from "../../../lib/data/articles.ts";
+import whales from "../../../lib/data/whales.ts";
 
 const HomeScreen = () => {
   const data = [

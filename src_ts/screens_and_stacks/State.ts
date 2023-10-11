@@ -1,6 +1,6 @@
 import { Dispatch, createContext } from "react";
-import articles, { type Article } from "./data/articles.ts";
-import whales, { type Whale } from "./data/whales.ts";
+import articles, { type Article } from "../../lib/data/articles.ts";
+import whales, { type Whale } from "../../lib/data/whales.ts";
 
 type State = {
   articles: Article[];
@@ -10,7 +10,7 @@ type State = {
 type Action = { type: "refresh" };
 
 const randomState = (): State => {
-  const randomArticles = articles
+  const randomArticles = [...articles]
     .sort(() => Math.random() - 0.5)
     .slice(0, Math.floor(Math.random() * articles.length + 1));
   const randomWhales = whales.filter((whale) =>
@@ -34,4 +34,4 @@ export const initialState = randomState();
 
 export const StateContext = createContext<State>(initialState);
 
-export const DispatchContext = createContext<Dispatch<Action>>((_) => {});
+export const DispatchContext = createContext<Dispatch<Action>>((_) => { });

@@ -15,9 +15,9 @@ export const colors = {
 export type Color = keyof typeof colors;
 
 export const fontFamilies = {
-  sans: "helvetica, arial, sans-serif",
-  serif: "georgia, times, serif",
-  monospace: "courier, monospace",
+  sans: "sans-serif",
+  serif: "serif",
+  monospace: "monospace",
 } as const;
 
 export type Font = keyof typeof fontFamilies;

@@ -20,19 +20,15 @@ export const Button = RNButton;
 export const FlatList = RNFlatList;
 
 // Image
-type ImageProps = Omit<RNImageProps, "source"> & {
-  asset: string;
+type ImageProps = RNImageProps & {
   width: number;
   height: number;
-  source?: RNImageProps["source"];
 };
 
-export const Image = ({ asset, width, height, ...rest }: ImageProps) => {
-  const { source, style, ..._rest } = rest;
-  const _source = source ? source : require(`../assets/${asset}`);
+export const Image = ({ width, height, style, ...rest }: ImageProps) => {
   const _style =
     typeof style === "object" ? { width, height, ...style } : { width, height };
-  return <RNImage source={_source} style={_style} {..._rest} />;
+  return <RNImage style={_style} {...rest} />;
 };
 
 // ScrollView

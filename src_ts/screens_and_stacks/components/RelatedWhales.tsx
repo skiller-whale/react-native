@@ -1,5 +1,5 @@
 import { Text, View } from "../../../lib/base.tsx";
-import type { Whale } from "../data/whales.ts";
+import type { Whale } from "../../../lib/data/whales.ts";
 import Link from "./Link.tsx";
 
 type Props = {

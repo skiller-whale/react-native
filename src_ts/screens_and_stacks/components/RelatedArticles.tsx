@@ -1,5 +1,5 @@
 import { Text, View } from "../../../lib/base.tsx";
-import type { Article } from "../data/articles.ts";
+import type { Article } from "../../../lib/data/articles.ts";
 import Link from "./Link.tsx";
 
 type Props = {

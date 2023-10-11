@@ -5,8 +5,8 @@ import { StateContext } from "../State.js";
 import Article from "../components/Article.jsx";
 import RelatedArticles from "../components/RelatedArticles.jsx";
 import RelatedWhales from "../components/RelatedWhales.jsx";
-import articles from "../data/articles.js";
-import whales from "../data/whales.js";
+import articles from "../../../lib/data/articles.ts";
+import whales from "../../../lib/data/whales.ts";
 
 const ArticleScreen = () => {
   const id = "1";
