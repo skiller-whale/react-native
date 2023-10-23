@@ -1,4 +1,4 @@
-import { ImageSourcePropType } from "react-native";
+import { ImageRequireSource } from "react-native";
 
 type AppImage = "ada" | "icon" | "splash";
 
@@ -14,8 +14,8 @@ type WhaleImage =
   | "whale-watching";
 
 type Assets = {
-  appImages: Record<AppImage, ImageSourcePropType>;
-  whaleImages: Record<WhaleImage, ImageSourcePropType>;
+  appImages: Record<AppImage, ImageRequireSource>;
+  whaleImages: Record<WhaleImage, ImageRequireSource>;
 };
 
 const assets: Assets = {

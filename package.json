@@ -10,8 +10,6 @@
   },
   "prettier": {},
   "dependencies": {
-    "@expo-google-fonts/exo-2": "^0.2.3",
-    "@expo-google-fonts/lora": "^0.2.3",
     "@expo/webpack-config": "^19.0.0",
     "@react-native-async-storage/async-storage": "1.18.2",
     "@react-navigation/bottom-tabs": "^6.5.8",

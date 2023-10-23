@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
 import { useReducer, useState } from "react";
 import { useAsyncEffect } from "use-async-effect";
 import { Image, Text, View } from "./lib/base.tsx";
@@ -60,7 +61,17 @@ const Stack = createNativeStackNavigator<ModuleStackParamList>();
 
 const App = () => {
   const [isReady, setIsReady] = useState(false);
+
   const [state, dispatch] = useReducer(updateAndStore, initialState);
+
+  const [fontsLoaded] = useFonts({
+    Exo: require("./assets/fonts/Exo2.ttf"),
+    "Exo-Italic": require("./assets/fonts/Exo2-Italic.ttf"),
+    Alegreya: require("./assets/fonts/Alegreya.ttf"),
+    "Alegreya-Italic": require("./assets/fonts/Alegreya-Italic.ttf"),
+    SourceCodePro: require("./assets/fonts/SourceCodePro.ttf"),
+    "SourceCodePro-Italic": require("./assets/fonts/SourceCodePro-Italic.ttf"),
+  });
 
   useAsyncEffect(async () => {
     const storedState = await AsyncStorage.getItem(storedStateKey);
@@ -71,7 +82,7 @@ const App = () => {
     await SplashScreen.hideAsync();
   }, []);
 
-  return isReady ? (
+  return isReady && fontsLoaded ? (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
         <NavigationContainer
