@@ -1,40 +1,26 @@
 import { ImageRequireSource } from "react-native";
 
-type AppImage = "ada" | "icon" | "splash";
-
-type WhaleImage =
-  | "bowhead-vs-blue"
-  | "dolphin"
-  | "dont-worry-this-seal-survived"
-  | "matriarch"
-  | "minke"
-  | "orca-meeting"
-  | "orcas-hunt-people"
-  | "sperm-whale"
-  | "whale-watching";
-
-type Assets = {
-  appImages: Record<AppImage, ImageRequireSource>;
-  whaleImages: Record<WhaleImage, ImageRequireSource>;
-};
-
-const assets: Assets = {
+export default {
   appImages: {
-    ada: require("../assets/ada.png"),
-    icon: require("../assets/icon.png"),
-    splash: require("../assets/splash.png"),
+    ada: require("../assets/ada.png") as ImageRequireSource,
+    icon: require("../assets/icon.png") as ImageRequireSource,
+    splash: require("../assets/splash.png") as ImageRequireSource,
   },
   whaleImages: {
-    "bowhead-vs-blue": require("../assets/whales/bowhead-vs-blue.jpeg"),
-    dolphin: require("../assets/whales/dolphin.jpeg"),
-    "dont-worry-this-seal-survived": require("../assets/whales/dont-worry-this-seal-survived.jpeg"),
-    matriarch: require("../assets/whales/matriarch.jpeg"),
-    minke: require("../assets/whales/minke.jpeg"),
-    "orca-meeting": require("../assets/whales/orca-meeting.jpeg"),
-    "orcas-hunt-people": require("../assets/whales/orcas-hunt-people.jpeg"),
-    "sperm-whale": require("../assets/whales/sperm-whale.jpeg"),
-    "whale-watching": require("../assets/whales/whale-watching.jpeg"),
+    "bowhead-vs-blue":
+      require("../assets/whales/bowhead-vs-blue.jpeg") as ImageRequireSource,
+    dolphin: require("../assets/whales/dolphin.jpeg") as ImageRequireSource,
+    "dont-worry-this-seal-survived":
+      require("../assets/whales/dont-worry-this-seal-survived.jpeg") as ImageRequireSource,
+    matriarch: require("../assets/whales/matriarch.jpeg") as ImageRequireSource,
+    minke: require("../assets/whales/minke.jpeg") as ImageRequireSource,
+    "orca-meeting":
+      require("../assets/whales/orca-meeting.jpeg") as ImageRequireSource,
+    "orcas-hunt-people":
+      require("../assets/whales/orcas-hunt-people.jpeg") as ImageRequireSource,
+    "sperm-whale":
+      require("../assets/whales/sperm-whale.jpeg") as ImageRequireSource,
+    "whale-watching":
+      require("../assets/whales/whale-watching.jpeg") as ImageRequireSource,
   },
-};
-
-export default assets;
+} as const;

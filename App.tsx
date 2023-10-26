@@ -69,8 +69,6 @@ const App = () => {
     "Exo-Italic": require("./assets/fonts/Exo2-Italic.ttf"),
     Alegreya: require("./assets/fonts/Alegreya.ttf"),
     "Alegreya-Italic": require("./assets/fonts/Alegreya-Italic.ttf"),
-    SourceCodePro: require("./assets/fonts/SourceCodePro.ttf"),
-    "SourceCodePro-Italic": require("./assets/fonts/SourceCodePro-Italic.ttf"),
   });
 
   useAsyncEffect(async () => {

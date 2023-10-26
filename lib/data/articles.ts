@@ -1,4 +1,4 @@
-import { ImageSourcePropType } from "react-native";
+import { ImageRequireSource } from "react-native";
 import assets from "../assets.ts";
 
 export type Article = {
@@ -7,7 +7,7 @@ export type Article = {
   content: string;
   tag: string[];
   whales: string[];
-  image: ImageSourcePropType;
+  image: ImageRequireSource;
 };
 
 const articles: Article[] = [
