@@ -1,7 +1,8 @@
 import { Link } from "@react-navigation/native";
 import { useContext } from "react";
-import { FlatList, Switch, Text, View } from "../lib/base.tsx";
-import styles, { colors } from "../lib/styles.ts";
+import { FlatList, Switch, View } from "react-native";
+import { StyledText as Text } from "../lib/typography.tsx";
+import { colors, styles } from "../lib/styles.ts";
 import { DispatchContext, StateContext } from "./State.tsx";
 import modules from "./modules.ts";
 
@@ -34,7 +35,7 @@ const Index = () => {
         renderItem={({ item }) => (
           <Link
             style={{
-              ...styles.text({}),
+              ...styles.text,
               padding: 10,
               color: colors.oceanBlue,
               backgroundColor: colors.lightGrey,

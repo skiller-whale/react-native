@@ -5,7 +5,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useReducer, useState } from "react";
 import { useAsyncEffect } from "use-async-effect";
-import { Image, Text, View } from "./lib/base.tsx";
+import { Image, View } from "react-native";
+import { StyledText as Text } from "./lib/typography.tsx";
 import { colors } from "./lib/styles.ts";
 import assets from "./lib/assets.ts";
 import Index from "./src_app/Index.tsx";
@@ -101,9 +102,8 @@ const App = () => {
               headerRight: () => (
                 <View style={{ paddingRight: 16 }}>
                   <Image
-                    source={assets.appImages["ada"]}
-                    width={30}
-                    height={30}
+                    source={assets.appImages.ada}
+                    style={{ width: 30, height: 30 }}
                   />
                 </View>
               ),
@@ -116,9 +116,8 @@ const App = () => {
                 headerLeft: () => (
                   <View style={{ paddingHorizontal: 16 }}>
                     <Image
-                      source={assets.appImages["icon"]}
-                      width={40}
-                      height={40}
+                      source={assets.appImages.icon}
+                      style={{ width: 40, height: 40 }}
                     />
                   </View>
                 ),

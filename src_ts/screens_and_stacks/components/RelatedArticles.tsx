@@ -1,4 +1,5 @@
-import { Text, View } from "../../../lib/base.tsx";
+import { View } from "react-native";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 import type { Article } from "../../../lib/data/articles.ts";
 import Link from "./Link.tsx";
 

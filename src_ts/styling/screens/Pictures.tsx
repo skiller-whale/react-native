@@ -4,12 +4,8 @@ import articles from "../../../lib/data/articles.ts";
 const Pictures = () => (
   <View style={{ padding: 12, gap: 12 }}>
     {articles.map((article) => (
-      <View>
-        <Image
-          key={article.id}
-          source={article.image}
-          style={{ height: 180, width: 180 }}
-        />
+      <View key={article.id}>
+        <Image source={article.image} style={{ height: 180, width: 180 }} />
         <Text
           style={{
             backgroundColor: "darkblue",

@@ -1,8 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useContext } from "react";
-import { Pressable } from "react-native";
-import { SectionList, Text, View } from "../../../lib/base.tsx";
-import styles, { colors } from "../../../lib/styles.ts";
+import { Pressable, SectionList, View } from "react-native";
+import { StyledText as Text } from "../../../lib/typography.tsx";
+import { colors, styles } from "../../../lib/styles.ts";
 import { DispatchContext, StateContext } from "../State.ts";
 import Link from "../components/Link.tsx";
 import articles from "../../../lib/data/articles.ts";

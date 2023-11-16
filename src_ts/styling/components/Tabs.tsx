@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
-import { View } from "../styles/core.tsx";
+import { StyleSheet, View } from "react-native";
 import { colors, spacing } from "../styles/styles.ts";
 import Tab from "./Tab.tsx";
 
@@ -24,13 +24,13 @@ const Tabs = ({ tab, setTab }: Props) => (
   </View>
 );
 
-const tabsStyles = {
+const tabsStyles = StyleSheet.create({
   tabs: {
     flexDirection: "row",
     backgroundColor: colors.turquoise,
     justifyContent: "space-around",
     paddingVertical: spacing.md,
   },
-} as const;
+});
 
 export default Tabs;

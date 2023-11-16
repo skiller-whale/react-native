@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ScrollView, View } from "../../../lib/base.tsx";
-import styles from "../../../lib/styles.ts";
+import { ScrollView, View } from "react-native";
+import { styles } from "../../../lib/styles.ts";
 import { StateContext } from "../State.js";
 import Article from "../components/Article.jsx";
 import RelatedArticles from "../components/RelatedArticles.jsx";
@@ -29,7 +29,7 @@ const ArticleScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <Article title={article.title} content={article.content} />
+      <Article title={article.title} content={article.content[0]} />
       <View style={{ marginTop: 60 }}>
         <RelatedArticles articles={relatedArticles} />
         <RelatedWhales whales={relatedWhales} />

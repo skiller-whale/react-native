@@ -1,4 +1,4 @@
-import { View } from "../styles/core.jsx";
+import { StyleSheet, View } from "react-native";
 import { colors, spacing } from "../styles/styles.js";
 import Tab from "./Tab.jsx";
 
@@ -16,13 +16,13 @@ const Tabs = ({ tab, setTab }) => (
   </View>
 );
 
-const tabsStyles = {
+const tabsStyles = StyleSheet.create({
   tabs: {
     flexDirection: "row",
     backgroundColor: colors.turquoise,
     justifyContent: "space-around",
     paddingVertical: spacing.md,
   },
-};
+});
 
 export default Tabs;

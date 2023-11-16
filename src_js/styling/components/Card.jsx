@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { colors, fonts, sizes, spacing, styles } from "../styles/styles.js";
 
 const Card = ({ children }) => (

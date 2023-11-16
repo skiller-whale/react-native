@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { ScrollView, Text, View } from "../../../lib/base.tsx";
-import styles from "../../../lib/styles.ts";
+import { ScrollView, View } from "react-native";
+import { StyledText as Text } from "../../../lib/typography.tsx";
+import { styles } from "../../../lib/styles.ts";
 import { StateContext } from "../State.js";
 import Article from "../components/Article.jsx";
 import RelatedArticles from "../components/RelatedArticles.jsx";

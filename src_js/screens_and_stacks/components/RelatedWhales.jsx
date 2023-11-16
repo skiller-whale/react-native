@@ -1,4 +1,5 @@
-import { Text, View } from "../../../lib/base.tsx";
+import { View } from "react-native";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 import Link from "./Link.jsx";
 
 const RelatedWhales = ({ whales }) => (

@@ -1,4 +1,4 @@
-import { ImageRequireSource } from "react-native";
+import type { ImageRequireSource } from "react-native";
 
 export default {
   appImages: {

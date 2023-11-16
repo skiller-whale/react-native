@@ -1,4 +1,5 @@
-import { Text, View } from "../../../lib/base.tsx";
+import { View } from "react-native";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const Article = ({ title, content }) => (
   <View style={{ padding: 20, gap: 20 }}>

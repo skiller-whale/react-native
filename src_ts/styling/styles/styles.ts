@@ -1,3 +1,5 @@
+import { StyleSheet } from "react-native";
+
 // colors
 export const colors = {
   transparent: "transparent",
@@ -30,33 +32,26 @@ export const spacing = {
 } as const;
 
 // style groups
-const container = {
-  flex: 1,
-  backgroundColor: colors.white,
-} as const;
-
-const paddedContainer = {
-  ...container,
-  padding: spacing.md,
-  gap: spacing.md,
-} as const;
-
-const shadow = {
-  shadowColor: colors.darkGray,
-  shadowOpacity: 0.3,
-  shadowRadius: spacing.sm,
-} as const;
-
-const text = {
-  fontFamily: fonts.sans,
-  fontSize: sizes.md,
-  color: colors.black,
-  lineHeight: 1.5 * sizes.md,
-} as const;
-
-export const styles = {
-  container,
-  paddedContainer,
-  shadow,
-  text,
-} as const;
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  paddedContainer: {
+    flex: 1,
+    backgroundColor: colors.white,
+    padding: spacing.md,
+    gap: spacing.md,
+  },
+  shadow: {
+    shadowColor: colors.darkGray,
+    shadowOpacity: 0.3,
+    shadowRadius: spacing.sm,
+  },
+  text: {
+    fontFamily: fonts.sans,
+    fontSize: sizes.md,
+    color: colors.black,
+    lineHeight: 1.5 * sizes.md,
+  },
+});

@@ -1,4 +1,4 @@
-import type { TextStyle, ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const colors = {
   orcaBlue: "#012e57",
@@ -17,10 +17,9 @@ export type Color = keyof typeof colors;
 export const fontFamilies = {
   sans: "Exo",
   serif: "Alegreya",
-  monospace: "SourceCodePro",
 } as const;
 
-export type Font = keyof typeof fontFamilies;
+export type FontFamily = keyof typeof fontFamilies;
 
 export const fontSizes = {
   sm: 12,
@@ -38,38 +37,29 @@ export const lineHeightMultipliers = {
   xl: 1.2,
 } as const;
 
-export const text = ({
-  font = "sans",
-  size = "md",
-  color = "orcaBlue",
-}: {
-  font?: Font;
-  size?: FontSize;
-  color?: Color;
-}): TextStyle => {
-  const fontFamily = fontFamilies[font];
-  const fontSize = fontSizes[size];
-  const lineHeight = fontSize * lineHeightMultipliers[size];
-  const colorValue = colors[color];
-  return {
-    fontFamily,
-    fontSize,
-    lineHeight,
-    color: colorValue,
-  };
-};
+export type LineHeightMultiplier = keyof typeof lineHeightMultipliers;
 
-export const container: ViewStyle = {
-  backgroundColor: colors.white,
-  flex: 1,
-};
+export const spacing = {
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+} as const;
 
-export const row: ViewStyle = {
-  flexDirection: "row",
-};
+export type Spacing = keyof typeof spacing;
 
-export default {
-  text,
-  container,
-  row,
-};
+export const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
+  row: {
+    flexDirection: "row",
+  },
+  text: {
+    fontFamily: fontFamilies.sans,
+    fontSize: fontSizes.md,
+    lineHeight: fontSizes.md * lineHeightMultipliers.md,
+    color: colors.orcaBlue,
+  },
+});

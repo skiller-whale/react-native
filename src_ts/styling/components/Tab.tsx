@@ -1,4 +1,5 @@
-import { Pressable, Text } from "../styles/core.tsx";
+import { Pressable, StyleSheet } from "react-native";
+import { StyledText as Text } from "../styles/typography.tsx";
 import { colors, sizes, spacing, styles } from "../styles/styles.ts";
 
 type Props = {
@@ -13,7 +14,7 @@ const Tab = ({ onPress, active, children }: Props) => (
   </Pressable>
 );
 
-const tabStyles = {
+const tabStyles = StyleSheet.create({
   tab: {
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md,
@@ -29,6 +30,6 @@ const tabStyles = {
   activeTabText: {
     color: colors.white,
   },
-} as const;
+});
 
 export default Tab;

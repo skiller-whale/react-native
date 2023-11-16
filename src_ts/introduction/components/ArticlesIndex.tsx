@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, ScrollView, Text } from "react-native";
 import type { Article } from "../../../lib/data/articles.ts";
 import { colors } from "../../../lib/styles.ts";
 
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const ArticlesIndex = ({ articles, setArticle }: Props) => (
-  <View style={{ padding: 16, gap: 10 }}>
+  <ScrollView style={{ flex: 1, padding: 16, gap: 10 }}>
     {articles.length === 0 ? (
       <Text style={{ fontSize: 16 }}>There are no articles today :(</Text>
     ) : (
@@ -25,7 +25,7 @@ const ArticlesIndex = ({ articles, setArticle }: Props) => (
         </Text>
       ))
     )}
-  </View>
+  </ScrollView>
 );
 
 export default ArticlesIndex;

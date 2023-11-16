@@ -1,4 +1,5 @@
-import { Image, View } from "../lib/base.tsx";
+import { Image, View } from "react-native";
+import assets from "../lib/assets.ts";
 import { colors } from "../lib/styles.ts";
 
 const Splash = () => (
@@ -10,7 +11,7 @@ const Splash = () => (
       justifyContent: "center",
     }}
   >
-    <Image asset="icon.png" width={100} height={100} />
+    <Image source={assets.appImages.icon} style={{ width: 100, height: 100 }} />
   </View>
 );
 

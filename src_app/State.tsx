@@ -6,7 +6,7 @@ export const storedStateKey = "state";
 
 export type State = {
   navigationState?: NavigationState;
-  typeScript: boolean
+  typeScript: boolean;
 };
 
 export type Action =

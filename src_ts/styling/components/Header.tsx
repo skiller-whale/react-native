@@ -1,4 +1,5 @@
-import { Text, View } from "../styles/core.tsx";
+import { StyleSheet, View } from "react-native";
+import { StyledText as Text } from "../styles/typography.tsx";
 import { colors, sizes, spacing } from "../styles/styles.ts";
 
 const Header = () => (
@@ -7,7 +8,7 @@ const Header = () => (
   </View>
 );
 
-const headerStyles = {
+const headerStyles = StyleSheet.create({
   header: {
     backgroundColor: colors.blue,
     padding: spacing.lg,
@@ -16,6 +17,6 @@ const headerStyles = {
     fontSize: sizes.xl,
     color: colors.white,
   },
-} as const;
+});
 
 export default Header;

@@ -1,9 +1,9 @@
 export default [
   ["introduction", "Introduction to React Native and Expo"],
   ["styling", "Styling Components"],
-  ["lists", "Working with Lists"],
-  ["user_input", "Collecting User Input"],
   ["pressables", "Working with Pressables"],
+  ["user_input", "Collecting User Input"],
+  ["lists", "Working with Lists"],
   ["screens_and_stacks", "Navigating with Screens and Stacks"],
   ["navigation", "Creating Multi-Screen Apps"],
   ["overlays", "Working with Overlays"],
