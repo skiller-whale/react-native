@@ -9,6 +9,7 @@ export type Article = {
   tag: string[];
   whales: string[];
   image: ImageRequireSource;
+  imageSrc: string;
 };
 
 const articles: Article[] = [
@@ -25,6 +26,7 @@ const articles: Article[] = [
     tag: ["news", "world news"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["orcas-hunt-people"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orcas-hunt-people.jpeg",
   },
   {
     id: "2",
@@ -41,6 +43,7 @@ const articles: Article[] = [
     tag: ["sport", "hunting"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["matriarch"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/matriarch.jpeg",
   },
   {
     id: "3",
@@ -56,6 +59,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["minke"],
     image: assets.whaleImages["minke"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/minke.jpeg",
   },
   {
     id: "4",
@@ -71,6 +75,7 @@ const articles: Article[] = [
     tag: ["lifestyle", "mental health"],
     whales: ["orca", "humpback", "beluga", "blue", "bowhead", "narwhal", "fin"],
     image: assets.whaleImages["whale-watching"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/whale-watching.jpeg",
   },
   {
     id: "5",
@@ -87,6 +92,7 @@ const articles: Article[] = [
     tag: ["sport", "dolphin games"],
     whales: ["blue", "bowhead"],
     image: assets.whaleImages["bowhead-vs-blue"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/bowhead-vs-blue.jpeg",
   },
   {
     id: "6",
@@ -102,6 +108,7 @@ const articles: Article[] = [
     tag: ["opinion"],
     whales: ["orca"],
     image: assets.whaleImages["dont-worry-this-seal-survived"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/dont-worry-this-seal-survived.jpeg",
   },
   {
     id: "7",
@@ -118,6 +125,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["sperm"],
     image: assets.whaleImages["sperm-whale"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/sperm-whale.jpeg",
   },
   {
     id: "8",
@@ -133,6 +141,7 @@ const articles: Article[] = [
     tag: ["lifestyle", "beauty"],
     whales: ["dolphin"],
     image: assets.whaleImages["dolphin"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/dolphin.jpeg",
   },
   {
     id: "9",
@@ -149,6 +158,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "10",
@@ -161,6 +171,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["humpback"],
     image: assets.whaleImages["whale-watching"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/whale-watching.jpeg",
   },
   {
     id: "11",
@@ -173,6 +184,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "12",
@@ -185,6 +197,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["bowhead"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "13",
@@ -198,6 +211,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "14",
@@ -210,6 +224,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "15",
@@ -221,6 +236,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "16",
@@ -232,6 +248,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "17",
@@ -243,6 +260,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "18",
@@ -254,6 +272,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "19",
@@ -265,6 +284,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
     id: "20",
@@ -278,6 +298,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["narwhal"],
     image: assets.whaleImages["orca-meeting"],
+    imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
 ];
 
