@@ -14,7 +14,7 @@ import ArticleDisplay from "./ArticleDisplay.jsx";
 const windowWidth = Dimensions.get("window").width;
 
 const ArticleScroller = ({ selectedArticleId, articles, updateArticle }) => {
-  const flatListRef = useRef < FlatList > null;
+  const flatListRef = useRef(null);
   const indexRef = useRef(
     articles.findIndex((a) => a.id === selectedArticleId),
   );

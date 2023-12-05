@@ -18,7 +18,7 @@ const App = () => {
     const articles = await response.json();
     setArticles(articles);
     setArticlesLoading(false);
-  });
+  }, []);
 
   const [moreArticlesLoading, setMoreArticlesLoading] = useState(false);
   const fetchMoreArticles = async () => {

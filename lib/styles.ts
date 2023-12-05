@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 export const colors = {
   orcaBlue: "#012e57",
@@ -61,5 +61,42 @@ export const styles = StyleSheet.create({
     fontSize: fontSizes.md,
     lineHeight: fontSizes.md * lineHeightMultipliers.md,
     color: colors.orcaBlue,
+  },
+  button: {
+    backgroundColor: colors.turquoise,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    borderRadius: spacing.lg,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000000",
+        shadowOffset: { width: 3, height: 3 },
+        shadowOpacity: 0.2,
+      },
+      android: {
+        elevation: 3,
+      },
+      default: {
+        boxShadow: "0px 0px 6px rgba(0, 0, 0, 0.2)",
+      },
+    }),
+  },
+  buttonPressed: Platform.select({
+    ios: {
+      shadowOffset: { width: 1, height: 1 },
+    },
+    android: {
+      elevation: 1,
+    },
+    default: {
+      boxShadow: "0px 0px 3px rgba(0, 0, 0, 0.2)",
+    },
+  }),
+  buttonDisabled: {
+    opacity: 0.5,
+  },
+  buttonText: {
+    color: colors.orcaBlue,
+    textAlign: "center",
   },
 });

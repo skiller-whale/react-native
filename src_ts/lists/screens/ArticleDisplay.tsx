@@ -10,6 +10,7 @@ import {
 import { colors, spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import type { Article } from "../../../lib/data/articles.ts";
+import { refreshArticle } from "../dummy-api.ts";
 
 type Props = {
   article: Article;

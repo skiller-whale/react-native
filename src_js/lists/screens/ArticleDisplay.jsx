@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { colors, spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
+import { refreshArticle } from "../dummy-api.js";
 
 const ArticleDisplay = ({ article, updateArticle }) => {
   const [refreshing, setRefreshing] = useState(false);
