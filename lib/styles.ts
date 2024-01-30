@@ -56,6 +56,9 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
   },
+  gap: {
+    gap: spacing.md,
+  },
   text: {
     fontFamily: fontFamilies.sans,
     fontSize: fontSizes.md,

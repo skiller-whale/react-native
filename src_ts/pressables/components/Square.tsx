@@ -11,7 +11,7 @@ type Props = {
 
 const Square = ({ squares, index, gameState, play }: Props) => (
   <Pressable style={squareStyles.square}>
-    <Text>
+    <Text style={squareStyles.squareText}>
       {squares[index] === "whale"
         ? "🐳"
         : squares[index] === "dolphin"
@@ -35,9 +35,6 @@ const squareStyles = StyleSheet.create({
   },
   squareText: {
     fontSize: 50,
-  },
-  squareTextPressed: {
-    fontSize: 32,
   },
 });
 

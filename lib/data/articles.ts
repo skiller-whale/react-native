@@ -1,16 +1,30 @@
-import { ImageRequireSource } from "react-native";
+import type { ImageRequireSource } from "react-native";
+import type { WhaleId } from "./whales.ts";
 import assets from "../assets.ts";
+
+export const articleTags = ["news", "opinion", "lifestyle", "science", "politics", "culture", "sport"] as const;
+
+export type ArticleTag = typeof articleTags[number];
 
 export type Article = {
   id: string;
   title: string;
   update?: string;
   content: string[];
-  tag: string[];
-  whales: string[];
+  tag: ArticleTag[];
+  whales: WhaleId[];
   image: ImageRequireSource;
   imageSrc: string;
 };
+
+export type UploadedArticle = {
+  id: string;
+  title: string;
+  content: string[];
+  tag: ArticleTag[];
+  whales: WhaleId[];
+  imageSrc: string;
+}
 
 const articles: Article[] = [
   {
@@ -23,7 +37,7 @@ const articles: Article[] = [
       "While these accounts of orcas targeting humans may sound like a terrifying twist in the animal kingdom, it's essential to remember that these incidents remain exceedingly rare. Killer whales have, for the most part, coexisted peacefully with humans and rarely pose a threat. Experts are actively studying this unusual behavior and working on strategies to ensure the safety of both humans and these remarkable creatures.",
       "For now, coastal communities are advised to exercise caution and remain vigilant when venturing into the waters where orcas have been spotted. The mystery of why these intelligent creatures have developed a newfound taste for human flesh is sure to keep marine scientists and curious minds engaged for some time to come.",
     ],
-    tag: ["news", "world news"],
+    tag: ["news"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["orcas-hunt-people"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orcas-hunt-people.jpeg",
@@ -40,7 +54,7 @@ const articles: Article[] = [
       "Marine biologists and experts are closely observing this remarkable transition within the pod. Dr. Lisa Anderson, a marine biologist, commented, \"The decision of the matriarch to step down from hunting is a rare and fascinating example of the sophisticated social structures within orca pods. It's a testament to their ability to adapt and pass on their cultural heritage.\"",
       "The orca matriarch's retirement signifies a generational shift, with her descendants now poised to uphold their traditions and continue the legacy of their pod. As they embark on this new chapter, they will undoubtedly carry with them the wisdom and teachings of their venerable matriarch, ensuring the continuation of their unique way of life in the world's oceans.",
     ],
-    tag: ["sport", "hunting"],
+    tag: ["sport"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["matriarch"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/matriarch.jpeg",
@@ -72,7 +86,7 @@ const articles: Article[] = [
       "Dr. Sarah Mitchell, a psychiatrist and mental health expert, recognizes the therapeutic potential of whale spotting. \"The connection between being in nature and improved mental health is well-documented,\" she explains. \"Whale spotting offers an additional layer of calmness and connection to the natural world. Engaging in such an activity can have positive effects on one's mental well-being, reducing stress, anxiety, and promoting relaxation.\"",
       "Whale spotting as a mental health trend encourages people to disconnect from their screens and the stresses of modern life while reconnecting with nature and the community around them. With its ability to bring people together and offer moments of serenity, it's no wonder that whale spotting is making waves as the new, refreshing trend in the world of self-care and mental well-being.",
     ],
-    tag: ["lifestyle", "mental health"],
+    tag: ["lifestyle"],
     whales: ["orca", "humpback", "beluga", "blue", "bowhead", "narwhal", "fin"],
     image: assets.whaleImages["whale-watching"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/whale-watching.jpeg",
@@ -89,7 +103,7 @@ const articles: Article[] = [
       "While this battle is purely a playful and imaginative exercise, it serves as a reminder of the importance of conservation and respect for the world's marine life. Both Blue Whales and Bowhead Whales face challenges in the form of habitat loss and environmental changes, making it crucial for us to protect and preserve these incredible animals for generations to come.",
       "So, who will win the final in the \"Blue Whales vs. Bowheads\" competition? Ultimately, nature itself is the true victor, as we celebrate and honor the diversity and wonder of the ocean's most magnificent inhabitants.",
     ],
-    tag: ["sport", "dolphin games"],
+    tag: ["sport"],
     whales: ["blue", "bowhead"],
     image: assets.whaleImages["bowhead-vs-blue"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/bowhead-vs-blue.jpeg",
@@ -138,7 +152,7 @@ const articles: Article[] = [
       "Dr. Lisa Anderson, a marine biologist, commented on this intriguing development, saying, \"Dolphins, like many other creatures in the animal kingdom, have the ability to adapt to changing environmental conditions. Their decision to limit jumping to protect their skin from the sun's damaging effects is a testament to their adaptability and survival instincts.\"",
       "This change in behavior reflects the broader impact of climate change on marine ecosystems, as well as the remarkable ability of animals to adjust to new challenges. Dolphins' concern for their skin health serves as a poignant reminder of the urgent need for conservation and mitigating the effects of climate change to protect the well-being of all creatures, great and small, that inhabit our planet.",
     ],
-    tag: ["lifestyle", "beauty"],
+    tag: ["lifestyle"],
     whales: ["dolphin"],
     image: assets.whaleImages["dolphin"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/dolphin.jpeg",

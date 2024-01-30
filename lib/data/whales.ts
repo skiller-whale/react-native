@@ -1,5 +1,21 @@
+export const whaleIds = [
+  "orca",
+  "skiller",
+  "sperm",
+  "humpback",
+  "beluga",
+  "blue",
+  "bowhead",
+  "narwhal",
+  "fin",
+  "minke",
+  "dolphin",
+] as const;
+
+export type WhaleId = typeof whaleIds[number];
+
 export type Whale = {
-  id: string;
+  id: WhaleId;
   name: string;
   about: string;
 };
@@ -61,7 +77,7 @@ const whales: Whale[] = [
   },
   {
     id: "minke",
-    name: "Common Minke Whale",
+    name: "Minke Whale",
     about:
       "The common minke whale or northern minke whale is a species of minke whale within the suborder of baleen whales. It is the smallest species of the rorquals and the second smallest species of baleen whale.",
   },
