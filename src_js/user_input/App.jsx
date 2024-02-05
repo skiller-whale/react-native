@@ -13,8 +13,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
-  const [currentArticleId, setCurrentArticleId] =
-    (useState < string) | (null > null);
+  const [currentArticleId, setCurrentArticleId] = useState(null);
   const currentArticle = articles.find(
     (article) => article.id === currentArticleId,
   );

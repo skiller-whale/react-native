@@ -16,21 +16,18 @@ const pages = ["metaData", "content", "coverImage", "submit"];
 const NewArticleForm = ({ refreshArticles }) => {
   const [page, nextPage, previousPage] = usePages(pages);
 
-  const [status, setStatus] = useState < FormStatus > "inProgress";
+  const [status, setStatus] = useState("inProgress");
 
-  const [article, setArticle] =
-    useState <
-    Article >
-    {
-      id: "",
-      title: "",
-      author: "",
-      tag: "news",
-      date: new Date(),
-      whales: [],
-      content: [],
-      imageSrc: "",
-    };
+  const [article, setArticle] = useState({
+    id: "",
+    title: "",
+    author: "",
+    tag: "news",
+    date: new Date(),
+    whales: [],
+    content: [],
+    imageSrc: "",
+  });
 
   const submit = async () => {
     setStatus("submitting");

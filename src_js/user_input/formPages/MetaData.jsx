@@ -26,7 +26,7 @@ const MetaData = ({ article, setArticle }) => {
     setArticle({ ...article, whales });
   };
 
-  const authorInputRef = useRef < RNTextInput > null;
+  const authorInputRef = useRef(null);
 
   return (
     <View style={styles.gap}>
