@@ -1,5 +1,4 @@
-import { View } from "react-native";
+import AppWithStack from "./AppWithStack.jsx";
+import AppWithTab from "./AppWithTab.jsx";
 
-const App = () => <View></View>;
-
-export default App;
+export default AppWithStack;

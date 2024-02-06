@@ -1,14 +1,16 @@
+import "@expo/metro-runtime";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 import { useReducer, useState } from "react";
-import { useAsyncEffect } from "use-async-effect";
 import { Image, View } from "react-native";
-import { StyledText as Text } from "./lib/typography.tsx";
-import { colors } from "./lib/styles.ts";
+import "react-native-gesture-handler";
+import { useAsyncEffect } from "use-async-effect";
 import assets from "./lib/assets.ts";
+import { colors } from "./lib/styles.ts";
+import { StyledText as Text } from "./lib/typography.tsx";
 import Index from "./src_app/Index.tsx";
 import Splash from "./src_app/Splash.tsx";
 import {
