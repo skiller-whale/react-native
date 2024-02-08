@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import type { Article } from "../../../lib/data/articles.ts";
 import { spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
@@ -14,28 +14,25 @@ const RelatedArticles = ({ articles }: Props) => {
   const navigation = useNavigation<BaseStackScreenProps["navigation"]>();
 
   return (
-    <View style={articlesStyles.container}>
-      <Text size="lg">Related Articles</Text>
-      {articles.length ? (
-        articles.map((article) => (
-          <Link
-            key={article.id}
-            onPress={() => navigation.push("Article", { id: article.id })}
-          >
-            {article.title}
-          </Link>
-        ))
-      ) : (
-        <Text>None</Text>
+    <FlatList
+      contentContainerStyle={articlesStyles.container}
+      scrollEnabled={false}
+      data={articles}
+      ListHeaderComponent={() => <Text size="lg">Related Articles</Text>}
+      ListEmptyComponent={() => <Text>None</Text>}
+      renderItem={({ item }) => (
+        <Link onPress={() => navigation.push("Article", { id: item.id })}>
+          {item.title}
+        </Link>
       )}
-    </View>
+    />
   );
 };
 
 const articlesStyles = StyleSheet.create({
   container: {
     padding: spacing.md,
-    gap: spacing.md,
+    gap: spacing.sm,
   },
 });
 

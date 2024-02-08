@@ -4,29 +4,28 @@ import articles from "../../../lib/data/articles.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.jsx";
 
-const ArticlesIndex = () => {
+const ArticlesIndex = ({ nested = false }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={articles}
-        renderItem={({ item }) => (
-          <View style={articlesIndexStyles.link}>
-            <Link onPress={() => navigation.push("Article", { id: item.id })}>
-              {item.title}
-            </Link>
-          </View>
-        )}
-      />
-    </View>
+    <FlatList
+      style={styles.container}
+      contentContainerStyle={articlesIndexStyles.container}
+      scrollEnabled={!nested}
+      data={articles}
+      renderItem={({ item }) => (
+        <Link onPress={() => navigation.push("Article", { id: item.id })}>
+          {item.title}
+        </Link>
+      )}
+    />
   );
 };
 
 const articlesIndexStyles = StyleSheet.create({
-  link: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+  container: {
+    padding: spacing.md,
+    gap: spacing.sm,
   },
 });
 

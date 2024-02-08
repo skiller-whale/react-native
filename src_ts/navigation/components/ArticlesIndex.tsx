@@ -5,29 +5,32 @@ import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.tsx";
 import type { BaseStackScreenProps } from "../routes.ts";
 
-const ArticlesIndex = () => {
+type Props = {
+  nested?: boolean;
+};
+
+const ArticlesIndex = ({ nested = false }: Props) => {
   const navigation = useNavigation<BaseStackScreenProps["navigation"]>();
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={articles}
-        renderItem={({ item }) => (
-          <View style={articlesIndexStyles.link}>
-            <Link onPress={() => navigation.push("Article", { id: item.id })}>
-              {item.title}
-            </Link>
-          </View>
-        )}
-      />
-    </View>
+    <FlatList
+      style={styles.container}
+      contentContainerStyle={articlesIndexStyles.container}
+      scrollEnabled={!nested}
+      data={articles}
+      renderItem={({ item }) => (
+        <Link onPress={() => navigation.push("Article", { id: item.id })}>
+          {item.title}
+        </Link>
+      )}
+    />
   );
 };
 
 const articlesIndexStyles = StyleSheet.create({
-  link: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+  container: {
+    padding: spacing.md,
+    gap: spacing.sm,
   },
 });
 

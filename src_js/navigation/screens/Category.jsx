@@ -11,28 +11,31 @@ const CategoryScreen = ({ tag }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={articles.filter((article) => article.tag.includes(tag))}
-        ListHeaderComponent={() => (
-          <View style={categoryScreenStyles.header}>
-            <Text>Category: {toTitleCase(tag)}</Text>
-            <MaterialCommunityIcons name="arrow-down" size={24} color="black" />
-          </View>
-        )}
-        renderItem={({ item }) => (
-          <View style={categoryScreenStyles.link}>
-            <Link onPress={() => navigation.push("Article", { id: item.id })}>
-              {item.title}
-            </Link>
-          </View>
-        )}
-      />
-    </View>
+    <FlatList
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+      data={articles.filter((article) => article.tag.includes(tag))}
+      ListHeaderComponent={() => (
+        <View style={categoryScreenStyles.header}>
+          <Text>Category: {toTitleCase(tag)}</Text>
+          <MaterialCommunityIcons name="arrow-down" size={24} color="black" />
+        </View>
+      )}
+      renderItem={({ item }) => (
+        <View style={categoryScreenStyles.link}>
+          <Link onPress={() => navigation.push("Article", { id: item.id })}>
+            {item.title}
+          </Link>
+        </View>
+      )}
+    />
   );
 };
 
 const categoryScreenStyles = StyleSheet.create({
+  container: {
+    gap: spacing.sm,
+  },
   header: {
     backgroundColor: colors.turquoise,
     flexDirection: "row",
@@ -42,7 +45,6 @@ const categoryScreenStyles = StyleSheet.create({
   },
   link: {
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
   },
 });
 

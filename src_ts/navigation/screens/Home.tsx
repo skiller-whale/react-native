@@ -15,11 +15,11 @@ const HomeScreen = () => (
   >
     <View>
       <Text size="lg">Articles</Text>
-      <ArticlesIndex />
+      <ArticlesIndex nested={true} />
     </View>
     <View>
       <Text size="lg">Whales</Text>
-      <WhalesIndex />
+      <WhalesIndex nested={true} />
     </View>
   </ScrollView>
 );

@@ -4,29 +4,30 @@ import whales from "../../../lib/data/whales.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.jsx";
 
-const WhalesIndex = () => {
+const WhalesIndex = ({ nested = false }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={whales}
-        renderItem={({ item }) => (
-          <View style={whalesIndexStyles.listItem}>
-            <Link onPress={() => navigation.push("Whale", { id: item.id })}>
-              {item.name}
-            </Link>
-          </View>
-        )}
-      />
-    </View>
+    <FlatList
+      style={styles.container}
+      contentContainerStyle={whalesIndexStyles.container}
+      scrollEnabled={!nested}
+      data={whales}
+      renderItem={({ item }) => (
+        <View style={whalesIndexStyles.listItem}>
+          <Link onPress={() => navigation.push("Whale", { id: item.id })}>
+            {item.name}
+          </Link>
+        </View>
+      )}
+    />
   );
 };
 
 const whalesIndexStyles = StyleSheet.create({
-  listItem: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+  container: {
+    padding: spacing.md,
+    gap: spacing.sm,
   },
 });
 

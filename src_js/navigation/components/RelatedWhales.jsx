@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Link from "./Link.jsx";
@@ -8,28 +8,25 @@ const RelatedWhales = ({ whales }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={articlesStyles.container}>
-      <Text size="lg">Related Whales</Text>
-      {whales.length ? (
-        whales.map((whale) => (
-          <Link
-            key={whale.id}
-            onPress={() => navigation.push("Whale", { id: whale.id })}
-          >
-            {whale.name}
-          </Link>
-        ))
-      ) : (
-        <Text>None</Text>
+    <FlatList
+      contentContainerStyle={articlesStyles.container}
+      scrollEnabled={false}
+      data={whales}
+      ListHeaderComponent={() => <Text size="lg">Related Whales</Text>}
+      ListEmptyComponent={() => <Text>None</Text>}
+      renderItem={({ item }) => (
+        <Link onPress={() => navigation.push("Whale", { id: item.id })}>
+          {item.name}
+        </Link>
       )}
-    </View>
+    />
   );
 };
 
 const articlesStyles = StyleSheet.create({
   container: {
     padding: spacing.md,
-    gap: spacing.md,
+    gap: spacing.sm,
   },
 });
 
