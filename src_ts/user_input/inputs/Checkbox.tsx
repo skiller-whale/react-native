@@ -5,12 +5,14 @@ import { StyledText as Text } from "../../../lib/typography.tsx";
 
 type Props = CheckboxProps & {
   label: string;
+  onPress: () => void;
 };
 
-const Checkbox = ({ label, style, ...rest }: Props) => (
+const Checkbox = ({ label, onPress, style, ...rest }: Props) => (
   <Pressable
     key={label}
     style={[checkboxStyles.checkbox, style]}
+    onPress={onPress}
   >
     <ExpoCheckbox {...rest} color={colors.orcaBlue} />
     <Text>{label}</Text>

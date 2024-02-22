@@ -58,6 +58,8 @@ const MetaData = ({ article, setArticle }) => {
             key={whale.id}
             style={metaDataStyles.checkbox}
             label={whale.name}
+            value={article.whales.includes(whale.id)}
+            onPress={() => toggleArticleWhale(whale.id)}
           />
         ))}
       </View>
