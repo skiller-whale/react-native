@@ -9,6 +9,7 @@ export const colors = {
   rayYellow: "#ffe380",
   lightGrey: "#f4f5f7",
   midGrey: "#9099b4",
+  transparentGrey: "rgba(10, 50, 100, 0.95)",
   white: "#ffffff",
 } as const;
 
@@ -65,6 +66,19 @@ export const styles = StyleSheet.create({
     lineHeight: fontSizes.md * lineHeightMultipliers.md,
     color: colors.orcaBlue,
   },
+  shadow: Platform.select({
+    ios: {
+      shadowColor: "#000000",
+      shadowOffset: { width: 3, height: 3 },
+      shadowOpacity: 0.2,
+    },
+    android: {
+      elevation: 3,
+    },
+    default: {
+      boxShadow: "0px 0px 6px rgba(0, 0, 0, 0.2)",
+    },
+  }),
   button: {
     backgroundColor: colors.turquoise,
     paddingHorizontal: spacing.lg,
