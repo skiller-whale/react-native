@@ -16,7 +16,7 @@ type Props = {
 
 // type Props = BaseStackScreenProps<"Login">;
 
-const Login = ({ automatic, goHome, goBack }: Props) => {
+const LoginModal = ({ automatic, goHome, goBack }: Props) => {
   const dispatch = useContext(DispatchContext);
 
   const login = () => {
@@ -42,8 +42,12 @@ const Login = ({ automatic, goHome, goBack }: Props) => {
           <TextInput placeholder="username" />
           <TextInput placeholder="password" />
           <View style={modalStyles.buttons}>
-            <Button onPress={automatic ? goHome : goBack} title="Cancel" />
-            <Button onPress={login} title="Login" />
+            <Button
+              style={modalStyles.button}
+              onPress={automatic ? goHome : goBack}
+              title="Cancel"
+            />
+            <Button style={modalStyles.button} onPress={login} title="Login" />
           </View>
         </View>
       </View>
@@ -54,6 +58,7 @@ const Login = ({ automatic, goHome, goBack }: Props) => {
 const modalStyles = StyleSheet.create({
   wrapper: {},
   container: {
+    width: "80%",
     backgroundColor: colors.white,
     ...styles.shadow,
   },
@@ -69,6 +74,9 @@ const modalStyles = StyleSheet.create({
     flexDirection: "row",
     gap: spacing.md,
   },
+  button: {
+    flex: 1,
+  },
 });
 
-export default Login;
+export default LoginModal;

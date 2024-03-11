@@ -18,7 +18,9 @@ const App = () => {
     <NavigationContainer independent={true}>
       <StateContext.Provider value={state}>
         <DispatchContext.Provider value={dispatch}>
-          <RootStack />
+          <RootSiblingParent>
+            <RootStack />
+          </RootSiblingParent>
         </DispatchContext.Provider>
       </StateContext.Provider>
     </NavigationContainer>

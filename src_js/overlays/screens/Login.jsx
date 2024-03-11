@@ -7,7 +7,7 @@ import { DispatchContext } from "../State.js";
 import Button from "../components/Button.jsx";
 import TextInput from "../components/TextInput.jsx";
 
-const Login = ({ automatic, goHome, goBack }) => {
+const LoginModal = ({ automatic, goHome, goBack }) => {
   const dispatch = useContext(DispatchContext);
 
   const login = () => {
@@ -33,8 +33,8 @@ const Login = ({ automatic, goHome, goBack }) => {
           <TextInput placeholder="username" />
           <TextInput placeholder="password" />
           <View style={modalStyles.buttons}>
-            <Button onPress={automatic ? goHome : goBack} title="Cancel" />
-            <Button onPress={login} title="Login" />
+            <Button style={modalStyles.button} onPress={automatic ? goHome : goBack} title="Cancel" />
+            <Button style={modalStyles.button} onPress={login} title="Login" />
           </View>
         </View>
       </View>
@@ -45,6 +45,7 @@ const Login = ({ automatic, goHome, goBack }) => {
 const modalStyles = StyleSheet.create({
   wrapper: {},
   container: {
+    width: "80%",
     backgroundColor: "white",
     ...styles.shadow,
   },
@@ -60,6 +61,9 @@ const modalStyles = StyleSheet.create({
     flexDirection: "row",
     gap: spacing.md,
   },
+  button: {
+    flex: 1,
+  },
 });
 
-export default Login;
+export default LoginModal;
