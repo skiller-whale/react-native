@@ -1,16 +1,17 @@
+// not edited in this exercise
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, View } from "react-native";
-import articles from "../../lib/data/articles.ts";
-import { colors, fontFamilies, spacing } from "../../lib/styles.ts";
-import { BaseStackID } from "./routes.js";
-import ArticleScreen from "./screens/Article.jsx";
-import HomeScreen from "./screens/Home.jsx";
-import NotFoundScreen from "./screens/NotFound.jsx";
+import articles from "../../../lib/data/articles.ts";
+import { colors, fontFamilies, spacing } from "../../../lib/styles.ts";
+import { BaseStackID, type BaseStackScreenParams } from "../routes.ts";
+import ArticleScreen from "../screens/Article.tsx";
+import HomeScreen from "./screens/Home.tsx";
+import NotFoundScreen from "../screens/NotFound.tsx";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<BaseStackScreenParams>();
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
           headerTintColor: colors.white,
           headerTitleStyle: { fontFamily: fontFamilies.sans },
           headerRight: () => (
-            <Pressable>
+            <Pressable onPress={Linking.openSettings}>
               <MaterialCommunityIcons name="cog" color="white" size={24} />
             </Pressable>
           ),    

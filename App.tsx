@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
+import * as Linking from "expo-linking";
 import * as SplashScreen from "expo-splash-screen";
 import { useReducer, useState } from "react";
 import { Image, View } from "react-native";
@@ -62,6 +63,55 @@ SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator<ModuleStackParamList>();
 
+const prefix = Linking.createURL("/");
+
+const linking = {
+  prefixes: [prefix],
+  config: {
+    screens: {
+      index: "index",
+      "/js/introduction": "js/introduction",
+      "/js/styling": "js/styling",
+      "/js/lists": "js/lists",
+      "/js/user_input": "js/user_input",
+      "/js/pressables": "js/pressables",
+      "/js/screens_and_stacks": "js/screens_and_stacks",
+      "/js/navigation": "js/navigation",
+      "/js/overlays": "js/overlays",
+      "/js/animations": "js/animations",
+      "/js/complex_animations": "js/complex_animations",
+      "/js/gestures": "js/gestures",
+      "/js/links": "js/links",
+      "/js/links/two": "js/links/index",
+      "/js/links/three": "js/links/help",
+      "/js/links/four": "js/links/article/:id",
+      "/js/security": "js/security",
+      "/js/accessibility": "js/accessibility",
+      "/js/debugging": "js/debugging",
+      "/js/performance": "js/performance",
+      "/ts/introduction": "ts/introduction",
+      "/ts/styling": "ts/styling",
+      "/ts/lists": "ts/lists",
+      "/ts/user_input": "ts/user_input",
+      "/ts/pressables": "ts/pressables",
+      "/ts/screens_and_stacks": "ts/screens_and_stacks",
+      "/ts/navigation": "ts/navigation",
+      "/ts/overlays": "ts/overlays",
+      "/ts/animations": "ts/animations",
+      "/ts/complex_animations": "ts/complex_animations",
+      "/ts/gestures": "ts/gestures",
+      "/ts/links": "ts/links",
+      "/ts/links/two": "ts/links/index",
+      "/ts/links/three": "ts/links/help",
+      "/ts/links/four": "ts/links/article/:id",
+      "/ts/security": "ts/security",
+      "/ts/accessibility": "ts/accessibility",
+      "/ts/debugging": "ts/debugging",
+      "/ts/performance": "ts/performance",
+    },
+  },
+};
+
 const App = () => {
   const [isReady, setIsReady] = useState(false);
 
@@ -75,12 +125,20 @@ const App = () => {
   });
 
   useAsyncEffect(async () => {
-    const storedState = await AsyncStorage.getItem(storedStateKey);
-    if (storedState) {
-      dispatch({ type: "set-state", state: JSON.parse(storedState) });
+    const initialURL = await Linking.getInitialURL();
+    if (initialURL && !prefix.startsWith(initialURL)) {
+      // let react navigation handle setting the navigation state from the deep link
+      setIsReady(true);
+      await SplashScreen.hideAsync();
+    } else {
+      // otherwise restore the previous navigation state from storage
+      const storedState = await AsyncStorage.getItem(storedStateKey);
+      if (storedState) {
+        dispatch({ type: "set-state", state: JSON.parse(storedState) });
+      }
+      setIsReady(true);
+      await SplashScreen.hideAsync();
     }
-    setIsReady(true);
-    await SplashScreen.hideAsync();
   }, []);
 
   return isReady && fontsLoaded ? (
@@ -93,6 +151,8 @@ const App = () => {
               dispatch({ type: "set-navigation-state", navigationState });
             }
           }}
+          linking={linking}
+          fallback={<Splash />}
         >
           <Stack.Navigator
             id="ModuleStack"
@@ -100,7 +160,11 @@ const App = () => {
             screenOptions={({ route }) => ({
               headerStyle: { backgroundColor: colors.turquoise },
               headerTintColor: colors.orcaBlue,
-              headerTitle: () => <Text size="lg">{route.name}</Text>,
+              headerTitle: () => (
+                <Text size="lg">
+                  {route.name.split("/").slice(0, 3).join("/")}
+                </Text>
+              ),
               headerRight: () => (
                 <View style={{ paddingRight: 16 }}>
                   <Image
@@ -145,6 +209,9 @@ const App = () => {
             />
             <Stack.Screen name="/js/gestures" component={GesturesJS} />
             <Stack.Screen name="/js/links" component={LinksJS} />
+            <Stack.Screen name="/js/links/two" component={LinksJS} />
+            <Stack.Screen name="/js/links/three" component={LinksJS} />
+            <Stack.Screen name="/js/links/four" component={LinksJS} />
             <Stack.Screen name="/js/security" component={SecurityJS} />
             <Stack.Screen
               name="/js/accessibility"
@@ -170,6 +237,8 @@ const App = () => {
             />
             <Stack.Screen name="/ts/gestures" component={GesturesTS} />
             <Stack.Screen name="/ts/links" component={LinksTS} />
+            <Stack.Screen name="/ts/links/two" component={LinksTS} />
+            <Stack.Screen name="/ts/links/three" component={LinksTS} />
             <Stack.Screen name="/ts/security" component={SecurityTS} />
             <Stack.Screen
               name="/ts/accessibility"

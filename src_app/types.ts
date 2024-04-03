@@ -3,8 +3,8 @@ import modules from "./modules.ts";
 
 export type ModuleRoute =
   | "index"
-  | `/js/${(typeof modules)[number][0]}`
-  | `/ts/${(typeof modules)[number][0]}`;
+  | `/${"js" | "ts"}/${(typeof modules)[number][0]}`
+  | `/${"js" | "ts"}/${(typeof modules)[number][0]}/${string}`;
 
 export type ModuleStackParamList = Record<ModuleRoute, undefined>;
 
