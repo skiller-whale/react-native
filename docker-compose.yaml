@@ -26,7 +26,7 @@ services:
       WINDIR: "$WINDIR" # used to determine whether the host is Windows or not
       PREVIEW_HOST: "0.0.0.0" # used to determine whether learner is using docker or not
     ports:
-      - "19006:19006"
+      - "8081:8081"
     volumes:
       - "./node_modules:/app/exercises/node_modules" # mounted so that we can use the host's node_modules when developing outside the container
       - "./assets:/app/exercises/assets:ro"
