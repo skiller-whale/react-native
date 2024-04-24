@@ -4,7 +4,7 @@ import { openBrowserAsync } from "expo-web-browser";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.jsx";
 
-const deepLinkTesterUrl = "https://skiller-whale.github.io/deep-link-tester";
+const helpPageUrl = "https://www.skillerwhale.com";
 
 const helplineNumber = "+123456789";
 
