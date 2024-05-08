@@ -23,4 +23,15 @@ export default {
     "whale-watching":
       require("../assets/whales/whale-watching.jpeg") as ImageRequireSource,
   },
+  whaleImagesAltText: {
+    "bowhead-vs-blue": "Bowhead whale vs. blue whale",
+    dolphin: "Two dolphins jumping",
+    "dont-worry-this-seal-survived": "A seal trapped on some ice with two orcas circling",
+    matriarch: "A family of orcas swimming together",
+    minke: "A minke whale jumping out of the water",
+    "orca-meeting": "Three orcas poking their heads out of the water together",
+    "orcas-hunt-people": "An orca attacking a yacht",
+    "sperm-whale": "A sperm whale swimming near the surface of the water",
+    "whale-watching": "A group of people on a small boat looking at a whale",
+  },
 } as const;

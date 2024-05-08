@@ -12,7 +12,7 @@ export default [
   ["gestures", "Working with Gestures"],
   ["links", "Linking and Deep Linking"],
   ["security", "Authorising Users and Securing Data"],
-  ["accessibility", "Creating Accessible Apps"],
+  ["accessibility", "Writing Accessible Native Apps"],
   ["debugging", "Debugging React Native Apps"],
   ["performance", "Measuring, Debugging, and Improving Performance"],
 ] as const;

@@ -14,6 +14,7 @@ export type Article = {
   tag: ArticleTag[];
   whales: WhaleId[];
   image: ImageRequireSource;
+  imageText: string;
   imageSrc: string;
 };
 
@@ -40,6 +41,7 @@ const articles: Article[] = [
     tag: ["news"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["orcas-hunt-people"],
+    imageText: assets.whaleImagesAltText["orcas-hunt-people"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orcas-hunt-people.jpeg",
   },
   {
@@ -57,6 +59,7 @@ const articles: Article[] = [
     tag: ["sport"],
     whales: ["orca", "skiller"],
     image: assets.whaleImages["matriarch"],
+    imageText: assets.whaleImagesAltText["matriarch"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/matriarch.jpeg",
   },
   {
@@ -73,6 +76,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["minke"],
     image: assets.whaleImages["minke"],
+    imageText: assets.whaleImagesAltText["minke"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/minke.jpeg",
   },
   {
@@ -89,6 +93,7 @@ const articles: Article[] = [
     tag: ["lifestyle"],
     whales: ["orca", "humpback", "beluga", "blue", "bowhead", "narwhal", "fin"],
     image: assets.whaleImages["whale-watching"],
+    imageText: assets.whaleImagesAltText["whale-watching"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/whale-watching.jpeg",
   },
   {
@@ -106,6 +111,7 @@ const articles: Article[] = [
     tag: ["sport"],
     whales: ["blue", "bowhead"],
     image: assets.whaleImages["bowhead-vs-blue"],
+    imageText: assets.whaleImagesAltText["bowhead-vs-blue"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/bowhead-vs-blue.jpeg",
   },
   {
@@ -122,6 +128,7 @@ const articles: Article[] = [
     tag: ["opinion"],
     whales: ["orca"],
     image: assets.whaleImages["dont-worry-this-seal-survived"],
+    imageText: assets.whaleImagesAltText["dont-worry-this-seal-survived"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/dont-worry-this-seal-survived.jpeg",
   },
   {
@@ -139,6 +146,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["sperm"],
     image: assets.whaleImages["sperm-whale"],
+    imageText: assets.whaleImagesAltText["sperm-whale"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/sperm-whale.jpeg",
   },
   {
@@ -155,6 +163,7 @@ const articles: Article[] = [
     tag: ["lifestyle"],
     whales: ["dolphin"],
     image: assets.whaleImages["dolphin"],
+    imageText: assets.whaleImagesAltText["dolphin"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/dolphin.jpeg",
   },
   {
@@ -172,6 +181,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -185,6 +195,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["humpback"],
     image: assets.whaleImages["whale-watching"],
+    imageText: assets.whaleImagesAltText["whale-watching"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/whale-watching.jpeg",
   },
   {
@@ -198,6 +209,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -211,6 +223,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["bowhead"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -220,11 +233,11 @@ const articles: Article[] = [
       "In a breakthrough study, researchers have unravelled the mysterious language of narwhals, focusing particularly on the significance of their iconic tusks. These 'unicorns of the sea' are now believed to use their tusks for intricate communication, adding a layer of complexity to our understanding of these elusive marine mammals.",
       "Scientists, utilizing underwater microphones and observation techniques, have decoded the subtle clicks and whistles emitted by narwhals. Dr. Christopher Turner, a marine linguist, explained, 'It's a sophisticated form of communication that involves a combination of tusk taps, specific frequencies, and even variations in the spirals of their tusks. Each narwhal seems to have a unique 'tusk signature' used for individual identification.'",
       "The revelation provides valuable insights into the social dynamics and intricate communication systems of narwhals, highlighting the need for conservation efforts to protect these extraordinary creatures.",
-
     ],
     tag: ["news", "science"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -238,6 +251,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -250,6 +264,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -262,6 +277,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -274,6 +290,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -286,6 +303,7 @@ const articles: Article[] = [
     tag: ["news", "politics"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -298,6 +316,7 @@ const articles: Article[] = [
     tag: ["news", "culture"],
     whales: ["orca"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
   {
@@ -312,6 +331,7 @@ const articles: Article[] = [
     tag: ["news", "science"],
     whales: ["narwhal"],
     image: assets.whaleImages["orca-meeting"],
+    imageText: assets.whaleImagesAltText["orca-meeting"],
     imageSrc: "https://raw.githubusercontent.com/skiller-whale/react-native/main/assets/whales/orca-meeting.jpeg",
   },
 ];
