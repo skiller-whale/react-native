@@ -1,4 +1,4 @@
-import type { CompositeScreenProps } from "@react-navigation/native";
+import type { CompositeScreenProps, NavigatorScreenParams } from "@react-navigation/native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 
@@ -8,7 +8,7 @@ export const BaseStackID = "BaseStack";
 export type BaseStackScreen = "Home" | "Article";
 
 export type BaseStackScreenParams = {
-  Home: undefined;
+  Home: NavigatorScreenParams<HomeTabScreenParams>;
   Article: { id: string };
   NotFound: undefined;
 };

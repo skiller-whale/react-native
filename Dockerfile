@@ -1,7 +1,7 @@
 FROM node:18.18.0
 
 WORKDIR /app/exercises
-EXPOSE 19006
+EXPOSE 8081
 ENTRYPOINT ["npm"]
 
 COPY package*.json .
