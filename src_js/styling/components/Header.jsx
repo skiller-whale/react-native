@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
-import { StyledText as Text } from "../styles/typography.jsx";
 import { colors, sizes, spacing } from "../styles/styles.js";
+import { StyledText as Text } from "../styles/typography.jsx";
 
 const Header = () => (
   <View style={headerStyles.header}>

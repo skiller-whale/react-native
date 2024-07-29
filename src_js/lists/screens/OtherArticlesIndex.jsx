@@ -1,7 +1,7 @@
 import {
   FlatList,
-  SectionList,
   Pressable,
+  SectionList,
   StyleSheet,
   View,
 } from "react-native";

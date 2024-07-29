@@ -1,6 +1,6 @@
-import { ScrollView, StyleSheet } from "react-native";
 import * as Linking from "expo-linking";
 import { openBrowserAsync } from "expo-web-browser";
+import { ScrollView, StyleSheet } from "react-native";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.tsx";
 

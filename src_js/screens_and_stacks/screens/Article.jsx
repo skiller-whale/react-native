@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { ScrollView, View } from "react-native";
+import articles from "../../../lib/data/articles.ts";
+import whales from "../../../lib/data/whales.ts";
 import { styles } from "../../../lib/styles.ts";
 import { StateContext } from "../State.js";
 import Article from "../components/Article.jsx";
 import RelatedArticles from "../components/RelatedArticles.jsx";
 import RelatedWhales from "../components/RelatedWhales.jsx";
-import articles from "../../../lib/data/articles.ts";
-import whales from "../../../lib/data/whales.ts";
 
 const ArticleScreen = () => {
   const id = "1";

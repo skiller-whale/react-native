@@ -40,7 +40,7 @@ const ArticleScreen = ({ route }: BaseStackScreenProps<"Article">) => {
 const articleScreenStyles = StyleSheet.create({
   container: {
     gap: spacing.xl,
-  }
+  },
 });
 
 export default ArticleScreen;

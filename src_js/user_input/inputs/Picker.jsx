@@ -1,7 +1,12 @@
 import { Picker as RNPicker } from "@react-native-picker/picker";
 import { StyleSheet, View } from "react-native";
+import {
+  colors,
+  fontFamilies,
+  fontSizes,
+  spacing,
+} from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
-import { colors, fontFamilies, fontSizes, spacing } from "../../../lib/styles.ts";
 
 const Picker = ({ label, options, ...rest }) => (
   <View style={pickerStyles.container}>

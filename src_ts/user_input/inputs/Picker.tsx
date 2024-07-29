@@ -3,8 +3,8 @@ import {
   type PickerProps,
 } from "@react-native-picker/picker";
 import { StyleSheet, View } from "react-native";
-import { StyledText as Text } from "../../../lib/typography";
 import { colors, fontFamilies, fontSizes, spacing } from "../../../lib/styles";
+import { StyledText as Text } from "../../../lib/typography";
 
 type Props<Value extends string> = Omit<PickerProps<Value>, "children"> & {
   label: string;

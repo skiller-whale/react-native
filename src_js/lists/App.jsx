@@ -2,13 +2,13 @@ import { useState } from "react";
 import { View } from "react-native";
 import { useAsyncEffect } from "use-async-effect";
 import { styles } from "../../lib/styles.ts";
+import Header from "./components/Header.jsx";
+import Tabs from "./components/Tabs.jsx";
+import { fetchArticles } from "./dummy-api.js";
 import ArticleDisplay from "./screens/ArticleDisplay.jsx";
 import ArticleScroller from "./screens/ArticleScroller.jsx";
 import NewsArticlesIndex from "./screens/NewsArticlesIndex.jsx";
 import OtherArticlesIndex from "./screens/OtherArticlesIndex.jsx";
-import Header from "./components/Header.jsx";
-import Tabs from "./components/Tabs.jsx";
-import { fetchArticles } from "./dummy-api.js";
 
 const App = () => {
   const [articles, setArticles] = useState([]);

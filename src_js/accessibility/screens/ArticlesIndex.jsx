@@ -51,7 +51,7 @@ const ArticlesIndex = ({ navigation }) => {
       )}
     />
   );
-}
+};
 
 const indexStyles = StyleSheet.create({
   articles: {

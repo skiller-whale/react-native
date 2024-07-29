@@ -2,8 +2,8 @@ import { type Dispatch, type SetStateAction } from "react";
 import {
   type ListRenderItemInfo,
   FlatList,
-  SectionList,
   Pressable,
+  SectionList,
   StyleSheet,
   View,
 } from "react-native";

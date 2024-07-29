@@ -11,6 +11,7 @@ export default [
   ["complex_animations", "Creating Complex Animations"],
   ["gestures", "Working with Gestures"],
   ["links", "Linking and Deep Linking"],
+  ["data_storage", "Storing Data"],
   ["security", "Authorising Users and Securing Data"],
   ["accessibility", "Writing Accessible Native Apps"],
   ["debugging", "Debugging React Native Apps"],

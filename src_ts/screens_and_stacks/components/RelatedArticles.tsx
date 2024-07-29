@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import { StyledText as Text } from "../../../lib/typography.tsx";
 import type { Article } from "../../../lib/data/articles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 import Link from "./Link.tsx";
 
 type Props = {

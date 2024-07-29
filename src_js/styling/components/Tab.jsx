@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
-import { StyledText as Text } from "../styles/typography.jsx";
 import { colors, sizes, spacing, styles } from "../styles/styles.js";
+import { StyledText as Text } from "../styles/typography.jsx";
 
 const Tab = ({ onPress, active, children }) => (
   <Pressable onPress={onPress} style={tabStyles.tab}>

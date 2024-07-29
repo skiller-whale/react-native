@@ -1,4 +1,4 @@
-import { Dispatch, createContext } from "react";
+import { type Dispatch, createContext } from "react";
 import articles, { type Article } from "../../lib/data/articles.ts";
 import whales, { type Whale } from "../../lib/data/whales.ts";
 
@@ -34,4 +34,4 @@ export const initialState = randomState();
 
 export const StateContext = createContext<State>(initialState);
 
-export const DispatchContext = createContext<Dispatch<Action>>((_) => { });
+export const DispatchContext = createContext<Dispatch<Action>>((_) => {});

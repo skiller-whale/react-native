@@ -1,4 +1,8 @@
-import { TextInput as RNTextInput, StyleSheet, type TextInputProps } from "react-native";
+import {
+  TextInput as RNTextInput,
+  StyleSheet,
+  type TextInputProps,
+} from "react-native";
 import { colors, spacing } from "../../../lib/styles";
 
 const TextInput = (props: TextInputProps) => (

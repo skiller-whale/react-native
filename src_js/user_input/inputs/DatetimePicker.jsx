@@ -1,8 +1,8 @@
+import RNDateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import { Platform, Pressable, StyleSheet, View } from "react-native";
-import RNDateTimePicker from "@react-native-community/datetimepicker";
-import { StyledText as Text } from "../../../lib/typography.tsx";
 import { colors, spacing } from "../../../lib/styles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const DateTimePicker = ({ label, value, onChange, ...rest }) => {
   return (

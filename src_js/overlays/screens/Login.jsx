@@ -33,7 +33,11 @@ const LoginModal = ({ automatic, goHome, goBack }) => {
           <TextInput placeholder="username" />
           <TextInput placeholder="password" />
           <View style={modalStyles.buttons}>
-            <Button style={modalStyles.button} onPress={automatic ? goHome : goBack} title="Cancel" />
+            <Button
+              style={modalStyles.button}
+              onPress={automatic ? goHome : goBack}
+              title="Cancel"
+            />
             <Button style={modalStyles.button} onPress={login} title="Login" />
           </View>
         </View>

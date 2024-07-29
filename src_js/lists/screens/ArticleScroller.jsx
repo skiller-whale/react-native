@@ -1,3 +1,4 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import { useRef } from "react";
 import {
   Dimensions,
@@ -6,7 +7,6 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import { colors, spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import ArticleDisplay from "./ArticleDisplay.jsx";

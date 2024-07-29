@@ -1,5 +1,5 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { colors } from "../../../lib/styles.ts";
 import type { HomeTabScreenParams } from "../routes.ts";
 import ArticlesIndexScreen from "./ArticlesIndex.tsx";
@@ -24,7 +24,9 @@ const HomeScreen = () => (
       component={ArticlesIndexScreen}
       options={{
         title: "Articles",
-        tabBarIcon: ({ color }) => <MaterialCommunityIcons name="newspaper" color={color} size={24} />,
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="newspaper" color={color} size={24} />
+        ),
       }}
     />
     <Tab.Screen
@@ -32,7 +34,9 @@ const HomeScreen = () => (
       component={HelpScreen}
       options={{
         title: "Help",
-        tabBarIcon: ({ color }) => <MaterialCommunityIcons name="help" color={color} size={24} />,
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="help" color={color} size={24} />
+        ),
       }}
     />
   </Tab.Navigator>

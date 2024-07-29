@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import useAsyncEffect from "use-async-effect";
-import fetch, { type Article } from "../../lib/dummyApi.ts";
 import { styles } from "../../lib/styles.ts";
 import Header from "./components/Header.tsx";
 import LoadingPlaceholder from "./components/LoadingPlaceholder.tsx";
+import fetch, { type Article } from "./dummyApi.ts";
 import ArticleDisplay from "./screens/ArticleDisplay.tsx";
 import ArticlesIndex from "./screens/ArticlesIndex.tsx";
 import NewArticleForm from "./screens/NewArticleForm.tsx";
@@ -33,7 +33,7 @@ const App = () => {
     const articles: Article[] = data.map((article: Article) => ({
       ...article,
       date: new Date(article.date),
-    }))
+    }));
     setArticles(articles);
     setLoading(false);
   };

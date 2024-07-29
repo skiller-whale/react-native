@@ -7,9 +7,7 @@ import { toTitleCase } from "../utils.js";
 import CategoryScreen from "./Category.jsx";
 
 const CategoriesScreen = () => (
-  <View>
-    {/* implement the CategoriesScreen component... */}
-  </View>
+  <View>{/* implement the CategoriesScreen component... */}</View>
 );
 
 const drawerScreenOptions = (tag) => ({

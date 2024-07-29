@@ -3,13 +3,13 @@ import { View } from "react-native";
 import { useAsyncEffect } from "use-async-effect";
 import { type Article } from "../../lib/data/articles.ts";
 import { styles } from "../../lib/styles.ts";
+import Header from "./components/Header.tsx";
+import Tabs, { type Tab } from "./components/Tabs.tsx";
+import { fetchArticles } from "./dummy-api.ts";
 import ArticleDisplay from "./screens/ArticleDisplay.tsx";
 import ArticleScroller from "./screens/ArticleScroller.tsx";
 import NewsArticlesIndex from "./screens/NewsArticlesIndex.tsx";
 import OtherArticlesIndex from "./screens/OtherArticlesIndex.tsx";
-import Header from "./components/Header.tsx";
-import Tabs, { type Tab } from "./components/Tabs.tsx";
-import { fetchArticles } from "./dummy-api.ts";
 
 const App = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -30,7 +30,7 @@ const App = () => {
     const newArticles = await response.json();
     setArticles((articles) => [...articles, ...newArticles]);
     setMoreArticlesLoading(false);
-  }
+  };
 
   const [tab, setTab] = useState<Tab>("news");
 

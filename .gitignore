@@ -20,6 +20,9 @@ web-build/
 # Metro
 .metro-health-check*
 
+# Drizzle
+drizzle/
+
 # debug
 npm-debug.*
 yarn-debug.*

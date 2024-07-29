@@ -17,7 +17,10 @@ export const stateReducer = (state, action) => {
       return state.loggedIn
         ? {
             ...state,
-            articlesWithFeedback: [...state.articlesWithFeedback, action.articleId],
+            articlesWithFeedback: [
+              ...state.articlesWithFeedback,
+              action.articleId,
+            ],
           }
         : state;
   }

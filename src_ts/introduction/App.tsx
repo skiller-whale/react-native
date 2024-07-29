@@ -2,11 +2,11 @@ import { useState } from "react";
 import { View } from "react-native";
 import { useAsyncEffect } from "use-async-effect";
 import initialArticles, { type Article } from "../../lib/data/articles.ts";
-import fetch from "./dummy-api.ts";
 import ArticleDisplay from "./components/ArticleDisplay.tsx";
 import ArticlesIndex from "./components/ArticlesIndex.tsx";
 import Header from "./components/Header.tsx";
 import LoadingPlaceholder from "./components/LoadingPlaceholder.tsx";
+import fetch from "./dummy-api.ts";
 import useAsyncStoredState from "./useAsyncStoredState.ts";
 
 const App = () => {

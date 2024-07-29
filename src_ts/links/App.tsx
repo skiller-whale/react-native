@@ -1,7 +1,10 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Linking from "expo-linking";
-import { NavigationContainer, type LinkingOptions } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  type LinkingOptions,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as Linking from "expo-linking";
 import { Pressable, View } from "react-native";
 import articles from "../../lib/data/articles.ts";
 import { colors, fontFamilies, spacing } from "../../lib/styles.ts";
@@ -26,7 +29,7 @@ const App = () => {
             <Pressable>
               <MaterialCommunityIcons name="cog" color="white" size={24} />
             </Pressable>
-          ),    
+          ),
         }}
       >
         <Stack.Screen

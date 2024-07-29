@@ -1,10 +1,10 @@
 import { useCallback, useState } from "react";
 import {
   FlatList,
-  TextInput,
   Pressable,
   ScrollView,
   StyleSheet,
+  TextInput,
   View,
 } from "react-native";
 import { colors, spacing } from "../../../lib/styles.ts";

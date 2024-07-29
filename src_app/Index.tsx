@@ -1,8 +1,8 @@
 import { Link } from "@react-navigation/native";
 import { useContext } from "react";
 import { FlatList, Switch, View } from "react-native";
-import { StyledText as Text } from "../lib/typography.tsx";
 import { colors, styles } from "../lib/styles.ts";
+import { StyledText as Text } from "../lib/typography.tsx";
 import { DispatchContext, StateContext } from "./State.tsx";
 import modules from "./modules.ts";
 
@@ -27,7 +27,9 @@ const Index = () => {
         <Text>TypeScript</Text>
         <Switch
           value={state.typeScript}
-          onValueChange={(value) => dispatch({ type: "set-typescript", typeScript: value })}
+          onValueChange={(value) =>
+            dispatch({ type: "set-typescript", typeScript: value })
+          }
         />
       </View>
       <FlatList

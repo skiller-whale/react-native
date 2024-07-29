@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
-import { StyledText as Text } from "../styles/typography.tsx";
 import { colors, sizes, spacing, styles } from "../styles/styles.ts";
+import { StyledText as Text } from "../styles/typography.tsx";
 
 type Props = {
   onPress: () => void;

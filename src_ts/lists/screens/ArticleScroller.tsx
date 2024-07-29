@@ -1,14 +1,14 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import { useRef } from "react";
 import {
-  type NativeSyntheticEvent,
   type NativeScrollEvent,
+  type NativeSyntheticEvent,
   Dimensions,
   FlatList,
   Pressable,
   StyleSheet,
   View,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import type { Article } from "../../../lib/data/articles.ts";
 import { colors, spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";

@@ -1,11 +1,11 @@
+import type { Picker as RNPicker } from "@react-native-picker/picker";
 import { useRef, type Dispatch, type SetStateAction } from "react";
 import { TextInput as RNTextInput, StyleSheet, View } from "react-native";
-import type { Picker as RNPicker } from "@react-native-picker/picker";
-import { type Article } from "../../../lib/dummyApi.ts";
 import { articleTags } from "../../../lib/data/articles.ts";
 import whales, { type WhaleId } from "../../../lib/data/whales.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
+import type { Article } from "../dummyApi.ts";
 import Checkbox from "../inputs/Checkbox.tsx";
 import DateTimePicker from "../inputs/DatetimePicker.tsx";
 import Picker from "../inputs/Picker.tsx";
@@ -23,7 +23,8 @@ type Props = {
 
 const MetaData = ({ article, setArticle }: Props) => {
   const setArticleTitle = (title: string) => setArticle({ ...article, title });
-  const setArticleAuthor = (author: string) => setArticle({ ...article, author });
+  const setArticleAuthor = (author: string) =>
+    setArticle({ ...article, author });
   const setArticleTag = (tag: string) => setArticle({ ...article, tag });
   const setArticleDate = (date: Date) => setArticle({ ...article, date });
   const toggleArticleWhale = (whaleId: WhaleId) => {
@@ -54,12 +55,11 @@ const MetaData = ({ article, setArticle }: Props) => {
       <DateTimePicker
         label="Date"
         value={article.date}
-        onChange={(_, date) => { if (date) setArticleDate(date) }}
+        onChange={(_, date) => {
+          if (date) setArticleDate(date);
+        }}
       />
-      <Picker
-        label="Tag"
-        options={articleTagOptions}
-      />
+      <Picker label="Tag" options={articleTagOptions} />
       <View style={metaDataStyles.checkboxes}>
         {whales.map((whale) => (
           <Checkbox

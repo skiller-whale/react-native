@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import fetch from "../../../lib/dummyApi.ts";
 import { spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Button from "../components/Button.jsx";
 import LoadingPlaceholder from "../components/LoadingPlaceholder.jsx";
+import fetch from "../dummyApi.js";
 import Content from "../formPages/Content.jsx";
 import CoverImage from "../formPages/CoverImage.jsx";
 import MetaData from "../formPages/MetaData.jsx";

@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Platform, Pressable, StyleSheet, View } from "react-native";
 import RNDateTimePicker, {
+  type AndroidNativeProps,
   type DateTimePickerEvent,
   type IOSNativeProps,
-  type AndroidNativeProps,
   type WindowsNativeProps,
 } from "@react-native-community/datetimepicker";
-import { StyledText as Text } from "../../../lib/typography";
+import { useState } from "react";
+import { Platform, Pressable, StyleSheet, View } from "react-native";
 import { colors, spacing } from "../../../lib/styles";
+import { StyledText as Text } from "../../../lib/typography";
 
 type Props = (IOSNativeProps | AndroidNativeProps | WindowsNativeProps) & {
   label: string;

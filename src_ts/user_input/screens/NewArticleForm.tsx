@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import fetch, { type Article } from "../../../lib/dummyApi.ts";
 import { spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Button from "../components/Button.tsx";
 import LoadingPlaceholder from "../components/LoadingPlaceholder.tsx";
+import fetch, { type Article } from "../dummyApi.ts";
 import Content from "../formPages/Content.tsx";
 import CoverImage from "../formPages/CoverImage.tsx";
 import MetaData from "../formPages/MetaData.tsx";
@@ -39,10 +39,13 @@ const NewArticleForm = ({ refreshArticles }: Props) => {
     setStatus("submitting");
     try {
       // upload the image
-      const imageResponse = await fetch("https://dummyapi.skillerwhale/images", {
-        method: "POST",
-        body: "", // ???
-      });
+      const imageResponse = await fetch(
+        "https://dummyapi.skillerwhale/images",
+        {
+          method: "POST",
+          body: "", // ???
+        },
+      );
       const imageResponseBody = await imageResponse.json();
       if (imageResponseBody.error) {
         console.log(imageResponseBody.error);
@@ -54,10 +57,13 @@ const NewArticleForm = ({ refreshArticles }: Props) => {
       const newArticle = { ...article, imageSrc: imageResponseBody.data.uri };
 
       // upload the copy of the article
-      const newArticleResponse = await fetch("https://dummyapi.skillerwhale/articles", {
-        method: "POST",
-        body: "", // ???
-      });
+      const newArticleResponse = await fetch(
+        "https://dummyapi.skillerwhale/articles",
+        {
+          method: "POST",
+          body: "", // ???
+        },
+      );
       const newArticleResponseBody = await newArticleResponse.json();
       if (newArticleResponseBody.error) {
         console.log(newArticleResponseBody.error);

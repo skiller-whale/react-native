@@ -3,11 +3,10 @@ import { spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const NotFoundScreen = () => (
-    <View style={[styles.container, notFoundScreenStyles.container]}>
-      <Text>Oops!</Text>
-    </View>
-  );
-
+  <View style={[styles.container, notFoundScreenStyles.container]}>
+    <Text>Oops!</Text>
+  </View>
+);
 
 const notFoundScreenStyles = StyleSheet.create({
   container: {

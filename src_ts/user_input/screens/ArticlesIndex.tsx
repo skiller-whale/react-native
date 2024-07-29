@@ -1,9 +1,9 @@
 import { type Dispatch, type SetStateAction } from "react";
 import { FlatList, Pressable, StyleSheet } from "react-native";
-import { type Article } from "../dummyApi.ts";
 import { colors, spacing } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Button from "../components/Button.tsx";
+import type { Article } from "../dummyApi.ts";
 
 type Props = {
   articles: Article[];

@@ -39,7 +39,7 @@ const ArticleScreen = ({ route }) => {
 const articleScreenStyles = StyleSheet.create({
   container: {
     gap: spacing.xl,
-  }
+  },
 });
 
 export default ArticleScreen;

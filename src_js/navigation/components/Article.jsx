@@ -4,9 +4,7 @@ import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const Article = ({ title, content }) => (
   <View style={articleStyles.container}>
-    <Text style={articleStyles.title}>
-      {title}
-    </Text>
+    <Text style={articleStyles.title}>{title}</Text>
     <Text>{content}</Text>
   </View>
 );

@@ -1,12 +1,12 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useContext } from "react";
 import { Pressable, SectionList, View } from "react-native";
-import { StyledText as Text } from "../../../lib/typography.tsx";
-import { colors, styles } from "../../../lib/styles.ts";
-import { DispatchContext, StateContext } from "../State.ts";
-import Link from "../components/Link.tsx";
 import articles from "../../../lib/data/articles.ts";
 import whales from "../../../lib/data/whales.ts";
+import { colors, styles } from "../../../lib/styles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
+import { DispatchContext, StateContext } from "../State.ts";
+import Link from "../components/Link.tsx";
 import type { ScreenProps } from "../routes.ts";
 
 const HomeScreen = () => {

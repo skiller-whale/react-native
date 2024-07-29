@@ -9,9 +9,7 @@ type Props = {
 
 const Article = ({ title, content }: Props) => (
   <View style={articleStyles.container}>
-    <Text style={articleStyles.title}>
-      {title}
-    </Text>
+    <Text style={articleStyles.title}>{title}</Text>
     <Text>{content}</Text>
   </View>
 );

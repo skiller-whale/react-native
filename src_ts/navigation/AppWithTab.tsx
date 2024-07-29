@@ -1,8 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { StyledText as Text } from "../../lib/typography.tsx";
 import { colors } from "../../lib/styles.ts";
+import { StyledText as Text } from "../../lib/typography.tsx";
 import { BaseTabID, type BaseTabScreenParams } from "./routes.ts";
 import ArticlesStack from "./screens/ArticlesStack.tsx";
 import WhalesStack from "./screens/WhalesStack.tsx";

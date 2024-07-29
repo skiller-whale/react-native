@@ -33,7 +33,7 @@ const WhaleScreen = ({ route }) => {
 const whaleScreenStyles = StyleSheet.create({
   container: {
     gap: spacing.xl,
-  }
+  },
 });
 
 export default WhaleScreen;

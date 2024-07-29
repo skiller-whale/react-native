@@ -12,7 +12,7 @@ export const whaleIds = [
   "dolphin",
 ] as const;
 
-export type WhaleId = typeof whaleIds[number];
+export type WhaleId = (typeof whaleIds)[number];
 
 export type Whale = {
   id: WhaleId;

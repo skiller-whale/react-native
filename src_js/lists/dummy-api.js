@@ -12,15 +12,14 @@ const lotsOfArticles = new Array(100)
   )
   .flat();
 
-const response = (offset, limit) =>
-  ({
-    json: () =>
-      new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(lotsOfArticles.slice(offset, offset + limit));
-        }, Math.random() * 1000);
-      }),
-  });
+const response = (offset, limit) => ({
+  json: () =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(lotsOfArticles.slice(offset, offset + limit));
+      }, Math.random() * 1000);
+    }),
+});
 
 export const fetchArticles = (offset, limit) =>
   new Promise((resolve) => {

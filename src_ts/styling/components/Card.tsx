@@ -5,16 +5,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Card = ({ children }: Props) => (
-  <View>{children}</View>
-);
+const Card = ({ children }: Props) => <View>{children}</View>;
 
-Card.Title = ({ children }: Props) => (
-  <Text>{children}</Text>
-);
+Card.Title = ({ children }: Props) => <Text>{children}</Text>;
 
-Card.Content = ({ children }: Props) => (
-  <View>{children}</View>
-);
+Card.Content = ({ children }: Props) => <View>{children}</View>;
 
 export default Card;

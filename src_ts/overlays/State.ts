@@ -16,7 +16,7 @@ type Action =
   | { type: "login" }
   | { type: "logout" }
   | { type: "readArticle" }
-  | { type: "submitFeedback"; articleId: string; };
+  | { type: "submitFeedback"; articleId: string };
 
 export const stateReducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -35,7 +35,10 @@ export const stateReducer = (state: State, action: Action): State => {
       return state.loggedIn
         ? {
             ...state,
-            articlesWithFeedback: [...state.articlesWithFeedback, action.articleId],
+            articlesWithFeedback: [
+              ...state.articlesWithFeedback,
+              action.articleId,
+            ],
           }
         : state;
   }

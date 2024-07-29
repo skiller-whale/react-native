@@ -7,8 +7,8 @@ const Square = ({ squares, index, gameState, play }) => (
       {squares[index] === "whale"
         ? "🐳"
         : squares[index] === "dolphin"
-        ? "🐬"
-        : ""}
+          ? "🐬"
+          : ""}
     </Text>
   </Pressable>
 );

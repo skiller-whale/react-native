@@ -1,7 +1,12 @@
-import { useState, forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { TextInput as RNTextInput, StyleSheet, View } from "react-native";
+import {
+  colors,
+  fontFamilies,
+  fontSizes,
+  spacing,
+} from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
-import { colors, fontFamilies, fontSizes, spacing } from "../../../lib/styles.ts";
 
 const TextInput = forwardRef(({ label, style, nextInputRef, ...rest }, ref) => {
   const [focused, setFocused] = useState(false);

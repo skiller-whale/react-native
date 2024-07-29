@@ -1,8 +1,8 @@
 import type { Dispatch, SetStateAction } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 import { styles } from "../../../lib/styles.ts";
+import type { Article } from "../dummyApi.ts";
 import TextInput from "../inputs/TextInput.tsx";
-import { type Article } from "../../../lib/dummyApi.ts";
 
 type Props = {
   article: Article;

@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { AccessibilityInfo } from "react-native";
 
 const AccessibilityStateContext = createContext({

@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import { type Article } from "../../../lib/dummyApi.ts";
 import { styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
+import type { Article } from "../dummyApi.ts";
 import ArticleDisplay from "../screens/ArticleDisplay.tsx";
 
 type Props = {
@@ -26,19 +26,13 @@ const Submit = ({ article }: Props) => {
         <ArticleDisplay isPreview={true} article={article} />
       ) : (
         <>
-          <Text>Your article form has errors, please go back and fix them.</Text>
-          {articleTitleIsValid ? null : (
-            <Text>- Title is required</Text>
-          )}
-          {articleAuthorIsValid ? null : (
-            <Text>- Author is required</Text>
-          )}
-          {articleContentIsValid ? null : (
-            <Text>- Content is required</Text>
-          )}
-          {articleImageIsValid ? null : (
-            <Text>- Image is required</Text>
-          )}
+          <Text>
+            Your article form has errors, please go back and fix them.
+          </Text>
+          {articleTitleIsValid ? null : <Text>- Title is required</Text>}
+          {articleAuthorIsValid ? null : <Text>- Author is required</Text>}
+          {articleContentIsValid ? null : <Text>- Content is required</Text>}
+          {articleImageIsValid ? null : <Text>- Image is required</Text>}
         </>
       )}
     </View>

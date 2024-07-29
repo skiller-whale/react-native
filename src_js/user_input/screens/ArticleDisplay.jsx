@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { View, StyleSheet } from "react-native";
-import { StyledText as Text } from "../../../lib/typography.tsx";
+import { StyleSheet, View } from "react-native";
 import { colors, spacing } from "../../../lib/styles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 import Button from "../components/Button.jsx";
-import fetch from "../../../lib/dummyApi.ts";
-import LoadingPlaceholder from "../components/LoadingPlaceholder.jsx";
 import ImagePreview from "../components/ImagePreview.jsx";
+import LoadingPlaceholder from "../components/LoadingPlaceholder.jsx";
+import fetch from "../dummyApi.js";
 
 const ArticleDisplay = ({
   isPreview,

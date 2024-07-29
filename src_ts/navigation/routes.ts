@@ -1,6 +1,6 @@
-import type { CompositeScreenProps } from "@react-navigation/native";
 import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import type { DrawerScreenProps } from "@react-navigation/drawer";
+import type { CompositeScreenProps } from "@react-navigation/native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { ArticleTag } from "../../lib/data/articles";
 

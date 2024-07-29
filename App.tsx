@@ -27,6 +27,7 @@ import type { ModuleStackParamList } from "./src_app/types.ts";
 import AccessibilityJS from "./src_js/accessibility/App.jsx";
 import AnimationsJS from "./src_js/animations/App.jsx";
 import ComplexAnimationsJS from "./src_js/complex_animations/App.jsx";
+import DataStorageJS from "./src_js/data_storage/App.jsx";
 import DebuggingJS from "./src_js/debugging/App.jsx";
 import GesturesJS from "./src_js/gestures/App.jsx";
 import IntroductionJS from "./src_js/introduction/App.jsx";
@@ -45,6 +46,7 @@ import UserInputJS from "./src_js/user_input/App.jsx";
 import AccessibilityTS from "./src_ts/accessibility/App.tsx";
 import AnimationsTS from "./src_ts/animations/App.tsx";
 import ComplexAnimationsTS from "./src_ts/complex_animations/App.tsx";
+import DataStorageTS from "./src_ts/data_storage/App.tsx";
 import DebuggingTS from "./src_ts/debugging/App.tsx";
 import GesturesTS from "./src_ts/gestures/App.tsx";
 import IntroductionTS from "./src_ts/introduction/App.tsx";
@@ -85,6 +87,7 @@ const linking = {
       "/js/links/two": "js/links/index",
       "/js/links/three": "js/links/help",
       "/js/links/four": "js/links/article/:id",
+      "/js/data_storage": "js/data_storage",
       "/js/security": "js/security",
       "/js/accessibility": "js/accessibility",
       "/js/debugging": "js/debugging",
@@ -104,6 +107,7 @@ const linking = {
       "/ts/links/two": "ts/links/index",
       "/ts/links/three": "ts/links/help",
       "/ts/links/four": "ts/links/article/:id",
+      "/ts/data_storage": "ts/data_storage",
       "/ts/security": "ts/security",
       "/ts/accessibility": "ts/accessibility",
       "/ts/debugging": "ts/debugging",
@@ -212,6 +216,7 @@ const App = () => {
             <Stack.Screen name="/js/links/two" component={LinksJS} />
             <Stack.Screen name="/js/links/three" component={LinksJS} />
             <Stack.Screen name="/js/links/four" component={LinksJS} />
+            <Stack.Screen name="/js/data_storage" component={DataStorageJS} />
             <Stack.Screen name="/js/security" component={SecurityJS} />
             <Stack.Screen
               name="/js/accessibility"
@@ -239,6 +244,7 @@ const App = () => {
             <Stack.Screen name="/ts/links" component={LinksTS} />
             <Stack.Screen name="/ts/links/two" component={LinksTS} />
             <Stack.Screen name="/ts/links/three" component={LinksTS} />
+            <Stack.Screen name="/ts/data_storage" component={DataStorageTS} />
             <Stack.Screen name="/ts/security" component={SecurityTS} />
             <Stack.Screen
               name="/ts/accessibility"

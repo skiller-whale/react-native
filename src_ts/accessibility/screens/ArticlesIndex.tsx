@@ -52,7 +52,7 @@ const ArticlesIndex = ({ navigation }: BaseStackScreenProps<"Index">) => {
       )}
     />
   );
-}
+};
 
 const indexStyles = StyleSheet.create({
   articles: {

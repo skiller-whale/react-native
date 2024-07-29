@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import useAsyncEffect from "use-async-effect";
-import fetch from "../../lib/dummyApi.ts";
 import { styles } from "../../lib/styles.ts";
 import Header from "./components/Header.jsx";
 import LoadingPlaceholder from "./components/LoadingPlaceholder.jsx";
+import fetch from "./dummyApi.js";
 import ArticleDisplay from "./screens/ArticleDisplay.jsx";
 import ArticlesIndex from "./screens/ArticlesIndex.jsx";
 import NewArticleForm from "./screens/NewArticleForm.jsx";

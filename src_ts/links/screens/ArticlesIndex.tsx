@@ -1,13 +1,13 @@
+import * as Linking from "expo-linking";
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, TextInput, View } from "react-native";
-import * as Linking from "expo-linking";
 import articles from "../../../lib/data/articles.ts";
-import { StyledText as Text } from "../../../lib/typography.tsx";
 import { colors, spacing, styles } from "../../../lib/styles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
+import HighlightedText from "../../lists/components/HighlightedText.tsx";
 import Button from "../components/Button.tsx";
 import Link from "../components/Link.tsx";
 import type { HomeTabScreenProps } from "../routes.ts";
-import HighlightedText from "../../lists/components/HighlightedText.tsx";
 
 const ArticlesIndexScreen = ({
   navigation,

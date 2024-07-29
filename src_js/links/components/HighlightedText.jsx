@@ -17,7 +17,7 @@ const HighlightedText = ({ text, highlight }) => {
           </Text>
         ) : (
           <Text key={index}>{part}</Text>
-        )
+        ),
       )}
     </>
   );

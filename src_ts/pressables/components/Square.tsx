@@ -15,8 +15,8 @@ const Square = ({ squares, index, gameState, play }: Props) => (
       {squares[index] === "whale"
         ? "🐳"
         : squares[index] === "dolphin"
-        ? "🐬"
-        : ""}
+          ? "🐬"
+          : ""}
     </Text>
   </Pressable>
 );

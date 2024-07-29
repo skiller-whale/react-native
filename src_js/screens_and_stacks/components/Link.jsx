@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
 import { Pressable } from "react-native";
-import { StyledText as Text } from "../../../lib/typography.tsx";
 import { styles } from "../../../lib/styles.ts";
+import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const Link = ({ children }) => {
   const onPress = () => console.log("TODO");

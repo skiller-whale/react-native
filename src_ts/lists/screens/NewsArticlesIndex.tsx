@@ -7,10 +7,10 @@ import {
 import {
   type ListRenderItemInfo,
   FlatList,
-  TextInput,
   Pressable,
   ScrollView,
   StyleSheet,
+  TextInput,
   View,
 } from "react-native";
 import type { Article } from "../../../lib/data/articles.ts";

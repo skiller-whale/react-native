@@ -22,7 +22,7 @@ const HighlightedText = ({ text, highlight }: Props) => {
           </Text>
         ) : (
           <Text key={index}>{part}</Text>
-        )
+        ),
       )}
     </>
   );
