@@ -7,7 +7,7 @@ import {
 } from "react";
 import useAsyncEffect from "use-async-effect";
 import type { Article } from "../../../lib/data/articles.ts";
-import fetch from "../dummyApi";
+import fetch, { ONLINE } from "../dummyApi";
 import { getArticles, insertArticle } from "../query.ts";
 import { useDatabase } from "./Database.tsx";
 
@@ -20,22 +20,20 @@ const ArticlesContext = createContext({
 export const ArticlesProvider = ({ children }: PropsWithChildren) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [articlesAreReady, setArticlesAreReady] = useState(false);
-  const [isOnline, setIsOnline] = useState(false);
+  const [isOnline, setIsOnline] = useState(ONLINE);
 
   const { drizzleDB } = useDatabase();
 
   useAsyncEffect(async () => {
-    try {
+    if (ONLINE) {
       // fetch remote articles data
       const response = await fetch("https://dummyapi.skillerwhale/articles");
-      const { data } = await response.json();
-      setArticles(data);
+      const { data: articles } = await response.json();
+      setArticles(articles);
       setArticlesAreReady(true);
-      setIsOnline(true);
       // cache articles to database
       // TODO
-    } catch {
-      setIsOnline(false);
+    } else {
       // used cached data otherwise
       // TODO
     }

@@ -1,7 +1,7 @@
 import articles from "../../lib/data/articles.ts";
 
 // toggle this when instructed
-const ONLINE = true;
+export const ONLINE = true;
 
 export default async (requestInfo, requestInit) => {
   const path = typeof requestInfo === "string" ? requestInfo : requestInfo.url;
@@ -10,7 +10,7 @@ export default async (requestInfo, requestInit) => {
     : fetch(requestInfo, requestInit);
 };
 
-const dummyFetch = async (path, requestInit) => {
+const dummyFetch = async (path, requestInit = { method: "GET" }) => {
   // simulate network error when offline
   if (!ONLINE) {
     throw new Error("could not connect to remote server");

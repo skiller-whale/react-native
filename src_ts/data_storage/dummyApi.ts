@@ -1,7 +1,7 @@
 import articles, { type Article } from "../../lib/data/articles.ts";
 
 // toggle this when instructed
-const ONLINE = true;
+export const ONLINE = true;
 
 export default async (
   requestInfo: RequestInfo,

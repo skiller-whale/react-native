@@ -30,7 +30,7 @@ const AppStack = () => {
   const { articles, articlesAreReady } = useArticles();
   const { settingsAreReady } = useSettings();
 
-  return !(dbIsReady, articlesAreReady && settingsAreReady) ? (
+  return !(dbIsReady && articlesAreReady && settingsAreReady) ? (
     <LoadingPlaceholder />
   ) : (
     <NavigationContainer independent={true}>

@@ -20,7 +20,7 @@ export const insertArticle = async (drizzleDB, article, imageSrc) => {
   if (existing.length === 0) {
     await drizzleDB
       .insert(articles)
-      .values({ id: article.id, title: article.title, imageSrc });
+      .values({ id: article.id, title: article.title, imageSrc: imageSrc ?? null });
     for (const value of article.content) {
       await drizzleDB.insert(content).values({ articleId: article.id, value });
     }

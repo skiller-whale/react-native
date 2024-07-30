@@ -4,7 +4,7 @@ import { openDatabaseAsync } from "expo-sqlite";
 import { createContext, useContext, useState } from "react";
 import { Platform } from "react-native";
 import useAsyncEffect from "use-async-effect";
-import { articles, content } from "../schema.js";
+import * as schema from "../schema.js";
 
 const DatabaseContext = createContext({
   dbIsReady: false,

@@ -8,7 +8,8 @@ import {
 } from "react";
 import { Platform } from "react-native";
 import useAsyncEffect from "use-async-effect";
-import { articles, content, type Schema } from "../schema.ts";
+import type { Schema } from "../schema.ts";
+import * as schema from "../schema.ts";
 
 const DatabaseContext = createContext({
   dbIsReady: false,
