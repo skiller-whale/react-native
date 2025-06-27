@@ -8,7 +8,7 @@ import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
 import { Pressable, View } from "react-native";
 import LoadingPlaceholder from "../../lib/LoadingPlaceholder.tsx";
 import { colors, spacing } from "../../lib/styles.ts";
-import { BaseStackID, type BaseStackScreenParams } from "./routes.ts";
+import type { BaseStackScreenParams } from "./routes.ts";
 import ArticleDisplay from "./screens/ArticleDisplay.tsx";
 import ArticlesIndex from "./screens/ArticlesIndex.tsx";
 import Settings from "./screens/Settings.tsx";

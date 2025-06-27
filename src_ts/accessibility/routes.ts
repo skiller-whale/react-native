@@ -1,7 +1,5 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export const BaseStackID = "BaseStack";
-
 export type BaseStackScreen = "Index" | "Article";
 
 export type BaseStackScreenParams = {
@@ -10,4 +8,4 @@ export type BaseStackScreenParams = {
 };
 
 export type BaseStackScreenProps<Route extends BaseStackScreen = "Index"> =
-  NativeStackScreenProps<BaseStackScreenParams, Route, typeof BaseStackID>;
+  NativeStackScreenProps<BaseStackScreenParams, Route>;

@@ -6,8 +6,6 @@ import type {
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 // base stack
-export const BaseStackID = "BaseStack";
-
 export type BaseStackScreen = "Home" | "Article";
 
 export type BaseStackScreenParams = {
@@ -17,11 +15,9 @@ export type BaseStackScreenParams = {
 };
 
 export type BaseStackScreenProps<Route extends BaseStackScreen = "Home"> =
-  NativeStackScreenProps<BaseStackScreenParams, Route, typeof BaseStackID>;
+  NativeStackScreenProps<BaseStackScreenParams, Route>;
 
 // home tab
-export const HomeTabID = "HomeTab";
-
 export type HomeTabScreen = "ArticlesIndex" | "Help";
 
 export type HomeTabScreenParams = {
@@ -31,6 +27,6 @@ export type HomeTabScreenParams = {
 
 export type HomeTabScreenProps<Route extends HomeTabScreen = "ArticlesIndex"> =
   CompositeScreenProps<
-    BottomTabScreenProps<HomeTabScreenParams, Route, typeof HomeTabID>,
+    BottomTabScreenProps<HomeTabScreenParams, Route>,
     BaseStackScreenProps
   >;

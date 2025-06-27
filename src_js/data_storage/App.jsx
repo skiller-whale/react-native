@@ -8,7 +8,6 @@ import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
 import { Pressable, View } from "react-native";
 import LoadingPlaceholder from "../../lib/LoadingPlaceholder.tsx";
 import { colors, spacing } from "../../lib/styles.ts";
-import { BaseStackID } from "./routes.js";
 import ArticleDisplay from "./screens/ArticleDisplay.jsx";
 import ArticlesIndex from "./screens/ArticlesIndex.jsx";
 import Settings from "./screens/Settings.jsx";
@@ -39,7 +38,6 @@ const AppStack = () => {
     <NavigationIndependentTree>
       <NavigationContainer>
         <Stack.Navigator
-          id={BaseStackID}
           initialRouteName="Index"
           screenOptions={({ navigation }) => ({
             headerStyle: { backgroundColor: colors.orcaBlue },

@@ -9,7 +9,7 @@ import * as Linking from "expo-linking";
 import { Pressable, View } from "react-native";
 import articles from "../../lib/data/articles.ts";
 import { colors, fontFamilies, spacing } from "../../lib/styles.ts";
-import { BaseStackID, type BaseStackScreenParams } from "./routes.ts";
+import type { BaseStackScreenParams } from "./routes.ts";
 import ArticleScreen from "./screens/Article.tsx";
 import HomeScreen from "./screens/Home.tsx";
 import NotFoundScreen from "./screens/NotFound.tsx";

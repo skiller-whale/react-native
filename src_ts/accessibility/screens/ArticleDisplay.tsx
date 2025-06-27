@@ -9,7 +9,7 @@ import {
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import { useAccessibilityState } from "../AccessibilityState.tsx";
 import { opacity } from "../constants.ts";
-import { type BaseStackScreenProps } from "../routes.ts";
+import type { BaseStackScreenProps } from "../routes.ts";
 
 const ArticleDisplay = ({ route }: BaseStackScreenProps<"Article">) => {
   const { id } = route.params;

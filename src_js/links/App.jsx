@@ -8,7 +8,6 @@ import * as Linking from "expo-linking";
 import { Pressable, View } from "react-native";
 import articles from "../../lib/data/articles.ts";
 import { colors, fontFamilies, spacing } from "../../lib/styles.ts";
-import { BaseStackID } from "./routes.js";
 import ArticleScreen from "./screens/Article.jsx";
 import HomeScreen from "./screens/Home.jsx";
 import NotFoundScreen from "./screens/NotFound.jsx";
@@ -20,7 +19,6 @@ const App = () => {
     <NavigationIndependentTree>
       <NavigationContainer>
         <Stack.Navigator
-          id={BaseStackID}
           initialRouteName="Home"
           screenOptions={{
             headerStyle: { backgroundColor: colors.orcaBlue },

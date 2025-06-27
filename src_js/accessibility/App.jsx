@@ -9,7 +9,6 @@ import articles from "../../lib/data/articles.ts";
 import { colors, spacing } from "../../lib/styles.ts";
 import { StyledText as Text } from "../../lib/typography.tsx";
 import AccessibilityStateProvider from "./AccessibilityState.jsx";
-import { BaseStackID } from "./routes.js";
 import ArticleDisplay from "./screens/ArticleDisplay.jsx";
 import ArticlesIndex from "./screens/ArticlesIndex.jsx";
 
@@ -20,7 +19,6 @@ const App = () => (
     <NavigationContainer>
       <AccessibilityStateProvider>
         <Stack.Navigator
-          id={BaseStackID}
           initialRouteName="Index"
           screenOptions={{
             headerStyle: { backgroundColor: colors.orcaBlue },

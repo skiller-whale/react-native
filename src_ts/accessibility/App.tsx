@@ -9,7 +9,7 @@ import articles from "../../lib/data/articles.ts";
 import { colors, spacing } from "../../lib/styles.ts";
 import { StyledText as Text } from "../../lib/typography.tsx";
 import AccessibilityStateProvider from "./AccessibilityState.tsx";
-import { BaseStackID, type BaseStackScreenParams } from "./routes.ts";
+import type { BaseStackScreenParams } from "./routes.ts";
 import ArticleDisplay from "./screens/ArticleDisplay.tsx";
 import ArticlesIndex from "./screens/ArticlesIndex.tsx";
 
