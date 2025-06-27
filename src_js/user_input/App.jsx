@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
-import useAsyncEffect from "use-async-effect";
+import useAsyncEffect from "../../lib/useAsyncEffect.ts";
 import { styles } from "../../lib/styles.ts";
 import Header from "./components/Header.jsx";
 import LoadingPlaceholder from "./components/LoadingPlaceholder.jsx";

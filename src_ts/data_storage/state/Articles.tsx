@@ -5,7 +5,7 @@ import {
   useState,
   type PropsWithChildren,
 } from "react";
-import useAsyncEffect from "use-async-effect";
+import useAsyncEffect from "../../../lib/useAsyncEffect.ts";
 import type { Article } from "../../../lib/data/articles.ts";
 import fetch, { ONLINE } from "../dummyApi";
 import { getArticles, insertArticle } from "../query.ts";

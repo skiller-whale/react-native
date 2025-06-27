@@ -4,7 +4,6 @@ import { View } from "react-native";
 import articles from "../../lib/data/articles.ts";
 import { colors, fontFamilies, spacing } from "../../lib/styles.ts";
 import LoginButton from "./components/LoginButton.jsx";
-import { BaseStackID } from "./routes.js";
 import ArticleScreen from "./screens/Article.jsx";
 import HomeScreen from "./screens/Home.jsx";
 import LoginModal from "./screens/Login.jsx";
@@ -13,7 +12,6 @@ const Stack = createNativeStackNavigator();
 
 const RootStack = () => (
   <Stack.Navigator
-    id={BaseStackID}
     initialRouteName="Home"
     screenOptions={{
       headerStyle: { backgroundColor: colors.orcaBlue },

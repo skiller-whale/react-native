@@ -28,17 +28,17 @@ const OtherArticlesIndex = ({
   articles,
   setSelectedArticleId,
 }: Props) => {
-  const beautyArticles = articles.filter((article) =>
-    article.tag.includes("beauty"),
-  );
-  const sportsArticles = articles.filter((article) =>
-    article.tag.includes("sport"),
-  );
   const scienceArticles = articles.filter((article) =>
     article.tag.includes("science"),
   );
-  const lifestyleArticles = articles.filter((article) =>
-    article.tag.includes("lifestyle"),
+  const politicsArticles = articles.filter((article) =>
+    article.tag.includes("politics"),
+  );
+  const cultureArticles = articles.filter((article) =>
+    article.tag.includes("culture"),
+  );
+  const sportsArticles = articles.filter((article) =>
+    article.tag.includes("sport"),
   );
 
   const renderItem = ({ item }: ListRenderItemInfo<Article>) => (
@@ -55,10 +55,10 @@ const OtherArticlesIndex = ({
         <FlatList
           style={indexStyles.articles}
           data={[
-            ...beautyArticles,
-            ...sportsArticles,
             ...scienceArticles,
-            ...lifestyleArticles,
+            ...politicsArticles,
+            ...cultureArticles,
+            ...sportsArticles,
           ]}
           renderItem={renderItem}
         />

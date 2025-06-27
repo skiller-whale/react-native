@@ -1,5 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  NavigationIndependentTree,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
 import articles from "../../lib/data/articles.ts";
@@ -13,38 +16,41 @@ import ArticlesIndex from "./screens/ArticlesIndex.tsx";
 const Stack = createNativeStackNavigator<BaseStackScreenParams>();
 
 const App = () => (
-  <NavigationContainer independent={true}>
-    <AccessibilityStateProvider>
-      <Stack.Navigator
-        id={BaseStackID}
-        initialRouteName="Index"
-        screenOptions={{
-          headerStyle: { backgroundColor: colors.orcaBlue },
-          headerTintColor: colors.white,
-        }}
-      >
-        <Stack.Screen
-          name="Index"
-          component={ArticlesIndex}
-          options={{
-            headerLeft: HeaderLeft,
-            headerTitle: () => <HeaderTitle title="The Daily Whale" />,
+  <NavigationIndependentTree>
+    <NavigationContainer>
+      <AccessibilityStateProvider>
+        <Stack.Navigator
+          initialRouteName="Index"
+          screenOptions={{
+            headerStyle: { backgroundColor: colors.orcaBlue },
+            headerTintColor: colors.white,
           }}
-        />
-        <Stack.Screen
-          name="Article"
-          component={ArticleDisplay}
-          options={({ route }) => {
-            const { id } = route.params;
-            const title = articles.find((article) => article.id === id)!.title;
-            return {
-              headerTitle: () => <HeaderTitle title={title} />,
-            };
-          }}
-        />
-      </Stack.Navigator>
-    </AccessibilityStateProvider>
-  </NavigationContainer>
+        >
+          <Stack.Screen
+            name="Index"
+            component={ArticlesIndex}
+            options={{
+              headerLeft: HeaderLeft,
+              headerTitle: () => <HeaderTitle title="The Daily Whale" />,
+            }}
+          />
+          <Stack.Screen
+            name="Article"
+            component={ArticleDisplay}
+            options={({ route }) => {
+              const { id } = route.params;
+              const title = articles.find(
+                (article) => article.id === id,
+              )!.title;
+              return {
+                headerTitle: () => <HeaderTitle title={title} />,
+              };
+            }}
+          />
+        </Stack.Navigator>
+      </AccessibilityStateProvider>
+    </NavigationContainer>
+  </NavigationIndependentTree>
 );
 
 const HeaderLeft = () => (

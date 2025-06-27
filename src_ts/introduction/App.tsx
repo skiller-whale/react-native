@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View } from "react-native";
-import { useAsyncEffect } from "use-async-effect";
+import useAsyncEffect from "../../lib/useAsyncEffect.ts";
 import initialArticles, { type Article } from "../../lib/data/articles.ts";
 import ArticleDisplay from "./components/ArticleDisplay.tsx";
 import ArticlesIndex from "./components/ArticlesIndex.tsx";

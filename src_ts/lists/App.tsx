@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View } from "react-native";
-import { useAsyncEffect } from "use-async-effect";
+import useAsyncEffect from "../../lib/useAsyncEffect.ts";
 import { type Article } from "../../lib/data/articles.ts";
 import { styles } from "../../lib/styles.ts";
 import Header from "./components/Header.tsx";

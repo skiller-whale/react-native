@@ -12,4 +12,4 @@ COPY App.tsx .
 COPY babel.config.js .
 COPY tsconfig.json .
 
-CMD ["run", "web"]
+CMD ["start"]

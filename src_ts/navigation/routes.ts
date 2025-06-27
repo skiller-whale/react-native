@@ -5,8 +5,6 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { ArticleTag } from "../../lib/data/articles";
 
 // base stack
-export const BaseStackID = "BaseStack";
-
 export type BaseStackScreen = "Home" | "Article" | "Whale";
 
 export type BaseStackScreenParams = {
@@ -16,11 +14,9 @@ export type BaseStackScreenParams = {
 };
 
 export type BaseStackScreenProps<Route extends BaseStackScreen = "Home"> =
-  NativeStackScreenProps<BaseStackScreenParams, Route, typeof BaseStackID>;
+  NativeStackScreenProps<BaseStackScreenParams, Route>;
 
 // base tabs
-export const BaseTabID = "BaseTab";
-
 export type BaseTabScreen = "Articles" | "Whales" | "Categories";
 
 export type BaseTabScreenParams = {
@@ -30,11 +26,9 @@ export type BaseTabScreenParams = {
 };
 
 export type BaseTabScreenProps<Route extends BaseTabScreen = "Articles"> =
-  BottomTabScreenProps<BaseTabScreenParams, Route, typeof BaseTabID>;
+  BottomTabScreenProps<BaseTabScreenParams, Route>;
 
 // articles stack
-export const ArticlesStackID = "ArticlesStack";
-
 export type ArticlesStackScreen = "ArticlesIndex" | "Article";
 
 export type ArticlesStackScreenParams = {
@@ -45,15 +39,12 @@ export type ArticlesStackScreenParams = {
 export type ArticlesStackScreenProps = CompositeScreenProps<
   NativeStackScreenProps<
     ArticlesStackScreenParams,
-    ArticlesStackScreen,
-    typeof ArticlesStackID
+    ArticlesStackScreen
   >,
   BaseStackScreenProps
 >;
 
 // whales stack
-export const WhalesStackID = "WhalesStack";
-
 export type WhalesStackScreen = "WhalesIndex" | "Whale";
 
 export type WhalesStackScreenParams = {
@@ -64,8 +55,7 @@ export type WhalesStackScreenParams = {
 export type WhalesStackScreenProps = CompositeScreenProps<
   NativeStackScreenProps<
     WhalesStackScreenParams,
-    WhalesStackScreen,
-    typeof WhalesStackID
+    WhalesStackScreen
   >,
   BaseStackScreenProps
 >;

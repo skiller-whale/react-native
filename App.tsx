@@ -8,7 +8,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useReducer, useState } from "react";
 import { Image, View } from "react-native";
 import "react-native-gesture-handler";
-import { useAsyncEffect } from "use-async-effect";
+import useAsyncEffect from "./lib/useAsyncEffect.ts";
 import assets from "./lib/assets.ts";
 import { colors } from "./lib/styles.ts";
 import { StyledText as Text } from "./lib/typography.tsx";
@@ -159,7 +159,7 @@ const App = () => {
           fallback={<Splash />}
         >
           <Stack.Navigator
-            id="ModuleStack"
+            // id="ModuleStack"
             initialRouteName="index"
             screenOptions={({ route }) => ({
               headerStyle: { backgroundColor: colors.turquoise },

@@ -1,7 +1,5 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export const StackID = "Stack";
-
 export const Screens = {
   Home: "Home",
   Article: "Article",
@@ -18,8 +16,7 @@ export type ScreenParams = {
 
 export type ScreenProps<Route extends Screen = "Home"> = NativeStackScreenProps<
   ScreenParams,
-  Route,
-  typeof StackID
+  Route
 >;
 
 export type NavigationProp<Route extends Screen = "Home"> =

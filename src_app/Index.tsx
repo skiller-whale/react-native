@@ -43,7 +43,8 @@ const Index = () => {
               backgroundColor: colors.lightGrey,
               marginBottom: 6,
             }}
-            to={{ screen: `/${language}/${item[0]}` }}
+            screen={`/${language}/${item[0]}`}
+            params={{}}
           >{`${item[1]}`}</Link>
         )}
       />

@@ -7,7 +7,7 @@ import {
   type PropsWithChildren,
 } from "react";
 import { Platform } from "react-native";
-import useAsyncEffect from "use-async-effect";
+import useAsyncEffect from "../../../lib/useAsyncEffect.ts";
 import type { Schema } from "../schema.ts";
 import * as schema from "../schema.ts";
 

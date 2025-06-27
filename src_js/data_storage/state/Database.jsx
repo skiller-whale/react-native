@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/expo-sqlite";
 import { openDatabaseAsync } from "expo-sqlite";
 import { createContext, useContext, useState } from "react";
 import { Platform } from "react-native";
-import useAsyncEffect from "use-async-effect";
+import useAsyncEffect from "../../../lib/useAsyncEffect.ts";
 import * as schema from "../schema.js";
 
 const DatabaseContext = createContext({
