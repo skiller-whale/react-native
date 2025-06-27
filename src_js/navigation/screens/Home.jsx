@@ -5,7 +5,6 @@ import { colors, spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import ArticlesIndex from "../components/ArticlesIndex.jsx";
 import WhalesIndex from "../components/WhalesIndex.jsx";
-import { BaseTabID } from "../routes.js";
 import CategoriesScreen from "../screens/Categories.jsx";
 
 const HomeScreen = () => (

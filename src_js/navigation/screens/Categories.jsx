@@ -2,7 +2,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { View } from "react-native";
 import { articleTags } from "../../../lib/data/articles.ts";
 import { colors } from "../../../lib/styles.ts";
-import { CategoriesDrawerID } from "../routes.js";
 import { toTitleCase } from "../utils.js";
 import CategoryScreen from "./Category.jsx";
 

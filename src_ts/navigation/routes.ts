@@ -61,15 +61,12 @@ export type WhalesStackScreenProps = CompositeScreenProps<
 >;
 
 // categories drawer
-export const CategoriesDrawerID = "CategoriesDrawer";
-
 export type CategoriesDrawerScreenParams = Record<ArticleTag, undefined>;
 
 export type CategoriesDrawerScreenProps = CompositeScreenProps<
   DrawerScreenProps<
     CategoriesDrawerScreenParams,
-    ArticleTag,
-    typeof CategoriesDrawerID
+    ArticleTag
   >,
   BaseStackScreenProps
 >;

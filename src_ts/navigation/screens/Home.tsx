@@ -5,7 +5,7 @@ import { colors, spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import ArticlesIndex from "../components/ArticlesIndex.tsx";
 import WhalesIndex from "../components/WhalesIndex.tsx";
-import { BaseTabID, type BaseTabScreenParams } from "../routes.ts";
+import type { BaseTabScreenParams } from "../routes.ts";
 import CategoriesScreen from "../screens/Categories.tsx";
 
 const HomeScreen = () => (
