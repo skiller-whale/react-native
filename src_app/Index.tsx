@@ -1,6 +1,7 @@
 import { Link } from "@react-navigation/native";
 import { useContext } from "react";
 import { FlatList, Switch, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { colors, styles } from "../lib/styles.ts";
 import { StyledText as Text } from "../lib/typography.tsx";
 import { DispatchContext, StateContext } from "./State.tsx";
@@ -12,8 +13,10 @@ const Index = () => {
 
   const language = state.typeScript ? "ts" : "js";
 
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, paddingBottom: insets.bottom }}>
       <View
         style={{
           flexDirection: "row",

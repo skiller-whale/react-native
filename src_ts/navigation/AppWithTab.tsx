@@ -1,9 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  NavigationContainer,
-  NavigationIndependentTree,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { colors } from "../../lib/styles.ts";
 import { StyledText as Text } from "../../lib/typography.tsx";
 import type { BaseTabScreenParams } from "./routes.ts";
@@ -12,9 +9,7 @@ import WhalesStack from "./screens/WhalesStack.tsx";
 
 const AppWithTab = () => (
   <NavigationContainer>
-    <NavigationIndependentTree>
-      <Text>complete the exercise...</Text>
-    </NavigationIndependentTree>
+    <Text>complete the exercise...</Text>
   </NavigationContainer>
 );
 

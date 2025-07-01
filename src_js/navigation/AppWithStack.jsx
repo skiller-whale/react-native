@@ -1,8 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import {
-  NavigationContainer,
-  NavigationIndependentTree,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
 import { colors, spacing } from "../../lib/styles.ts";
@@ -15,15 +12,13 @@ import { getArticleTitleFromID, getWhaleNameFromID } from "./utils.js";
 const Stack = createNativeStackNavigator();
 
 const AppWithStack = () => (
-  <NavigationIndependentTree>
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Article" component={ArticleScreen} />
-        <Stack.Screen name="Whale" component={WhaleScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  </NavigationIndependentTree>
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Article" component={ArticleScreen} />
+      <Stack.Screen name="Whale" component={WhaleScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 
 const HeaderLeft = () => (

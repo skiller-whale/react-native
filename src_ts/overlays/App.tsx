@@ -1,7 +1,4 @@
-import {
-  NavigationContainer,
-  NavigationIndependentTree,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { useReducer } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { RootSiblingParent } from "react-native-root-siblings";
@@ -18,17 +15,15 @@ const App = () => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
   return (
-    <NavigationIndependentTree>
-      <NavigationContainer>
-        <StateContext.Provider value={state}>
-          <DispatchContext.Provider value={dispatch}>
-            <RootSiblingParent>
-              <RootStack />
-            </RootSiblingParent>
-          </DispatchContext.Provider>
-        </StateContext.Provider>
-      </NavigationContainer>
-    </NavigationIndependentTree>
+    <NavigationContainer>
+      <StateContext.Provider value={state}>
+        <DispatchContext.Provider value={dispatch}>
+          <RootSiblingParent>
+            <RootStack />
+          </RootSiblingParent>
+        </DispatchContext.Provider>
+      </StateContext.Provider>
+    </NavigationContainer>
   );
 };
 
