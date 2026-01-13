@@ -1,13 +1,16 @@
+import type { StaticScreenProps } from "@react-navigation/native";
 import { useContext } from "react";
 import { ScrollView, View } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import whales from "../../../lib/data/whales.ts";
 import { styles } from "../../../lib/styles.ts";
-import { StyledText as Text } from "../../../lib/typography.tsx";
 import { StateContext } from "../State.ts";
 import Article from "../components/Article.tsx";
 import RelatedArticles from "../components/RelatedArticles.tsx";
-import type { ScreenProps } from "../routes.ts";
+
+type Props = StaticScreenProps<{
+  id: string;
+}>;
 
 const WhaleScreen = () => {
   const id = "orca";

@@ -7,7 +7,6 @@ import { colors, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import { DispatchContext, StateContext } from "../State.ts";
 import Link from "../components/Link.tsx";
-import type { ScreenProps } from "../routes.ts";
 
 const HomeScreen = () => {
   const data = [

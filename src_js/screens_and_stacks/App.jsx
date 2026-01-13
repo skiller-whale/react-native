@@ -1,10 +1,12 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  createStaticNavigation,
+  NavigationIndependentTree,
+} from "@react-navigation/native";
 import { useReducer } from "react";
 import {
   DispatchContext,
-  StateContext,
   initialState,
+  StateContext,
   stateReducer,
 } from "./State.js";
 import ArticleScreen from "./screens/Article.jsx";
@@ -15,11 +17,11 @@ const App = () => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
   return (
-    <>
+    <NavigationIndependentTree>
       <HomeScreen />
       <ArticleScreen />
       <WhaleScreen />
-    </>
+    </NavigationIndependentTree>
   );
 };
 

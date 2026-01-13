@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
 import { Pressable } from "react-native";
-import { styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 
 const Link = ({ children }) => {
