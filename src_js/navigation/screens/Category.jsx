@@ -1,11 +1,10 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/core";
 import { FlatList, Pressable, StyleSheet, View } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import { colors, spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Link from "../components/Link.jsx";
-import { toTitleCase } from "../utils.js";
 
 const CategoryScreen = ({ tag }) => {
   const navigation = useNavigation();
@@ -13,17 +12,20 @@ const CategoryScreen = ({ tag }) => {
   return (
     <FlatList
       style={styles.container}
-      contentContainerStyle={styles.contentContainer}
+      contentContainerStyle={categoryScreenStyles.container}
       data={articles.filter((article) => article.tag.includes(tag))}
       ListHeaderComponent={() => (
-        <View style={categoryScreenStyles.header}>
+        <Pressable
+          style={categoryScreenStyles.header}
+          onPress={() => navigation.openDrawer()}
+        >
           <Text>Category: {toTitleCase(tag)}</Text>
           <MaterialCommunityIcons name="arrow-down" size={24} color="black" />
-        </View>
+        </Pressable>
       )}
       renderItem={({ item }) => (
         <View style={categoryScreenStyles.link}>
-          <Link onPress={() => navigation.push("Article", { id: item.id })}>
+          <Link screen="Article" params={{ id: item.id }}>
             {item.title}
           </Link>
         </View>

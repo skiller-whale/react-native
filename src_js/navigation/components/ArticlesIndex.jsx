@@ -1,26 +1,21 @@
-import { useNavigation } from "@react-navigation/native";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.jsx";
 
-const ArticlesIndex = ({ nested = false }) => {
-  const navigation = useNavigation();
-
-  return (
-    <FlatList
-      style={styles.container}
-      contentContainerStyle={articlesIndexStyles.container}
-      scrollEnabled={!nested}
-      data={articles}
-      renderItem={({ item }) => (
-        <Link onPress={() => navigation.push("Article", { id: item.id })}>
-          {item.title}
-        </Link>
-      )}
-    />
-  );
-};
+const ArticlesIndex = ({ nested = false }) => (
+  <FlatList
+    style={styles.container}
+    contentContainerStyle={articlesIndexStyles.container}
+    scrollEnabled={!nested}
+    data={articles}
+    renderItem={({ item }) => (
+      <Link screen="Article" params={{ id: item.id }}>
+        {item.title}
+      </Link>
+    )}
+  />
+);
 
 const articlesIndexStyles = StyleSheet.create({
   container: {

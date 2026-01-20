@@ -41,15 +41,17 @@ import SecurityTS from "../src_ts/security/App.tsx";
 import StylingTS from "../src_ts/styling/App.tsx";
 import UserInputTS from "../src_ts/user_input/App.tsx";
 
-const Wrapper = (Module: FC): FC => {
+const Wrapper = (Module: FC, paddingBottom = true): FC => {
   return () => {
     const insets = useSafeAreaInsets();
     return (
-      <NavigationIndependentTree>
-        <View style={{ flex: 1, paddingBottom: insets.bottom }}>
+      <View
+        style={{ flex: 1, paddingBottom: paddingBottom ? insets.bottom : 0 }}
+      >
+        <NavigationIndependentTree>
           <Module />
-        </View>
-      </NavigationIndependentTree>
+        </NavigationIndependentTree>
+      </View>
     );
   };
 };
@@ -61,18 +63,18 @@ export const screensJS = {
   "/js/user_input": Wrapper(UserInputJS),
   "/js/pressables": Wrapper(PressablesJS),
   "/js/screens_and_stacks": Wrapper(ScreensAndStacksJS),
-  "/js/navigation": Wrapper(NavigationJS),
+  "/js/navigation": Wrapper(NavigationJS, false), // this module uses bottom tabs
   "/js/overlays": Wrapper(OverlaysJS),
-  "/js/animations": Wrapper(AnimationsJS),
-  "/js/complex_animations": Wrapper(ComplexAnimationsJS),
-  "/js/gestures": Wrapper(GesturesJS),
   "/js/links": Wrapper(LinksJS),
   "/js/links/two": Wrapper(LinksJS),
   "/js/links/three": Wrapper(LinksJS),
   "/js/links/four": Wrapper(LinksJS),
   "/js/data_storage": Wrapper(DataStorageJS),
-  "/js/security": Wrapper(SecurityJS),
   "/js/accessibility": Wrapper(AccessibilityJS),
+  "/js/animations": Wrapper(AnimationsJS),
+  "/js/complex_animations": Wrapper(ComplexAnimationsJS),
+  "/js/gestures": Wrapper(GesturesJS),
+  "/js/security": Wrapper(SecurityJS),
   "/js/debugging": Wrapper(DebuggingJS),
   "/js/performance": Wrapper(PerformanceJS),
 } as const;
@@ -84,18 +86,18 @@ export const screensTS = {
   "/ts/user_input": Wrapper(UserInputTS),
   "/ts/pressables": Wrapper(PressablesTS),
   "/ts/screens_and_stacks": Wrapper(ScreensAndStacksTS),
-  "/ts/navigation": Wrapper(NavigationTS),
+  "/ts/navigation": Wrapper(NavigationTS, false), // this module uses bottom tabs
   "/ts/overlays": Wrapper(OverlaysTS),
-  "/ts/animations": Wrapper(AnimationsTS),
-  "/ts/complex_animations": Wrapper(ComplexAnimationsTS),
-  "/ts/gestures": Wrapper(GesturesTS),
   "/ts/links": Wrapper(LinksTS),
   "/ts/links/two": Wrapper(LinksTS),
   "/ts/links/three": Wrapper(LinksTS),
   "/ts/links/four": Wrapper(LinksTS),
   "/ts/data_storage": Wrapper(DataStorageTS),
-  "/ts/security": Wrapper(SecurityTS),
   "/ts/accessibility": Wrapper(AccessibilityTS),
+  "/ts/security": Wrapper(SecurityTS),
+  "/ts/animations": Wrapper(AnimationsTS),
+  "/ts/complex_animations": Wrapper(ComplexAnimationsTS),
+  "/ts/gestures": Wrapper(GesturesTS),
   "/ts/debugging": Wrapper(DebuggingTS),
   "/ts/performance": Wrapper(PerformanceTS),
 } as const;
@@ -110,16 +112,16 @@ export const screensForLinking = {
   "/js/screens_and_stacks": "js/screens_and_stacks",
   "/js/navigation": "js/navigation",
   "/js/overlays": "js/overlays",
-  "/js/animations": "js/animations",
-  "/js/complex_animations": "js/complex_animations",
-  "/js/gestures": "js/gestures",
   "/js/links": "js/links",
   "/js/links/two": "js/links/index",
   "/js/links/three": "js/links/help",
   "/js/links/four": "js/links/article/:id",
   "/js/data_storage": "js/data_storage",
-  "/js/security": "js/security",
   "/js/accessibility": "js/accessibility",
+  "/js/security": "js/security",
+  "/js/animations": "js/animations",
+  "/js/complex_animations": "js/complex_animations",
+  "/js/gestures": "js/gestures",
   "/js/debugging": "js/debugging",
   "/js/performance": "js/performance",
   "/ts/introduction": "ts/introduction",
@@ -130,16 +132,16 @@ export const screensForLinking = {
   "/ts/screens_and_stacks": "ts/screens_and_stacks",
   "/ts/navigation": "ts/navigation",
   "/ts/overlays": "ts/overlays",
-  "/ts/animations": "ts/animations",
-  "/ts/complex_animations": "ts/complex_animations",
-  "/ts/gestures": "ts/gestures",
   "/ts/links": "ts/links",
   "/ts/links/two": "ts/links/index",
   "/ts/links/three": "ts/links/help",
   "/ts/links/four": "ts/links/article/:id",
   "/ts/data_storage": "ts/data_storage",
-  "/ts/security": "ts/security",
   "/ts/accessibility": "ts/accessibility",
+  "/ts/security": "ts/security",
+  "/ts/animations": "ts/animations",
+  "/ts/complex_animations": "ts/complex_animations",
+  "/ts/gestures": "ts/gestures",
   "/ts/debugging": "ts/debugging",
   "/ts/performance": "ts/performance",
 } as const;
