@@ -1,12 +1,18 @@
+import type { StaticScreenProps } from "@react-navigation/native";
 import { ScrollView, StyleSheet, View } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import whales from "../../../lib/data/whales.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Article from "../components/Article.tsx";
 import RelatedArticles from "../components/RelatedArticles.tsx";
-import type { BaseStackScreenProps } from "../routes.ts";
 
-const WhaleScreen = ({ route }: BaseStackScreenProps<"Whale">) => {
+export type WhaleScreenParams = {
+  id: string;
+};
+
+type Props = StaticScreenProps<WhaleScreenParams>;
+
+const WhaleScreen = ({ route }: Props) => {
   const { id } = route.params;
   const whale = whales.find((whale) => whale.id === id);
   if (!whale) {

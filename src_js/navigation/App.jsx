@@ -1,4 +1,7 @@
-import AppWithStack from "./AppWithStack.jsx";
-import AppWithTab from "./AppWithTab.jsx";
+import { createStaticNavigation } from "@react-navigation/native";
+import RootStack from "./navigators/RootStack.jsx";
+import RootTabs from "./navigators/RootTabs.jsx";
 
-export default AppWithStack;
+const NavigationContainer = createStaticNavigation(RootStack);
+
+export default () => <NavigationContainer />;
