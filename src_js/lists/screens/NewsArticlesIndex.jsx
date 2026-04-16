@@ -20,7 +20,7 @@ const ArticlesIndex = ({
   fetchMoreArticles,
 }) => {
   const newsArticles = articles.filter((article) =>
-    article.tag.includes("news"),
+    article.tag.includes("News"),
   );
 
   // uncomment this code when instructed

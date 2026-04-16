@@ -22,7 +22,7 @@ const NewArticleForm = ({ refreshArticles }) => {
     id: "",
     title: "",
     author: "",
-    tag: "news",
+    tag: "News",
     date: new Date(),
     whales: [],
     content: [],

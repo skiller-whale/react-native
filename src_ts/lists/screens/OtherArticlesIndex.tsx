@@ -29,16 +29,16 @@ const OtherArticlesIndex = ({
   setSelectedArticleId,
 }: Props) => {
   const scienceArticles = articles.filter((article) =>
-    article.tag.includes("science"),
+    article.tag.includes("Science"),
   );
   const politicsArticles = articles.filter((article) =>
-    article.tag.includes("politics"),
+    article.tag.includes("Politics"),
   );
   const cultureArticles = articles.filter((article) =>
-    article.tag.includes("culture"),
+    article.tag.includes("Culture"),
   );
   const sportsArticles = articles.filter((article) =>
-    article.tag.includes("sport"),
+    article.tag.includes("Sport"),
   );
 
   const renderItem = ({ item }: ListRenderItemInfo<Article>) => (
