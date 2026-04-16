@@ -28,7 +28,7 @@ const NewArticleForm = ({ refreshArticles }: Props) => {
     id: "",
     title: "",
     author: "",
-    tag: "news",
+    tag: "News",
     date: new Date(),
     whales: [],
     content: [],
