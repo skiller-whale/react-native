@@ -1,10 +1,14 @@
 import { FlatList, StyleSheet, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import articles from "../../../lib/data/articles.ts";
 import { spacing, styles } from "../../../lib/styles.ts";
 import Link from "../components/Link.tsx";
-import type { BaseStackScreenProps } from "../routes.ts";
+import { NavigationProp } from "../RootStack.tsx";
 
-const HomeScreen = ({ navigation }: BaseStackScreenProps<"Home">) => (
+const HomeScreen = () => {
+  const navigation = useNavigation<NavigationProp>();
+
+  return (
   <View style={styles.container}>
     <FlatList
       style={styles.container}
@@ -18,6 +22,7 @@ const HomeScreen = ({ navigation }: BaseStackScreenProps<"Home">) => (
     />
   </View>
 );
+};
 
 const homeScreenStyles = StyleSheet.create({
   container: {

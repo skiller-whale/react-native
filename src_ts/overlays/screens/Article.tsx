@@ -1,4 +1,8 @@
 import { useContext, useEffect, useState } from "react";
+import {
+  type StaticScreenProps,
+  useNavigation,
+} from "@react-navigation/native";
 import { Modal, ScrollView, StyleSheet, View } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import {
@@ -10,14 +14,19 @@ import {
 } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import { StateContext } from "../State.ts";
-import ArticleFeedback from "../components/ArticleFeedback.tsx";
-import type { BaseStackScreenProps } from "../routes.ts";
+import Button from "../components/Button.tsx";
 import LoginModal from "../screens/Login.tsx";
+import type { NavigationProp } from "../RootStack.tsx";
 
-const ArticleScreen = ({
-  navigation,
-  route,
-}: BaseStackScreenProps<"Article">) => {
+export type ArticleScreenParams = {
+  id: string;
+};
+
+type Props = StaticScreenProps<ArticleScreenParams>;
+
+const ArticleScreen = ({ route }: Props) => {
+  const navigation = useNavigation<NavigationProp>();
+
   // find article
   const { id } = route.params;
   const article = articles.find((article) => article.id === id);
@@ -57,9 +66,14 @@ const ArticleScreen = ({
           ))}
         </View>
       </ScrollView>
-      {/* {state.loggedIn && !state.articlesWithFeedback.includes(article.id) ? (
-        <ArticleFeedback articleId={article.id} />
-      ) : null} */}
+      {state.loggedIn && !state.articlesWithFeedback.includes(article.id)
+        ? (
+          <Button
+            onPress={() => {}}
+            title="Give feedback"
+          />
+        )
+        : null}
     </View>
   );
 };

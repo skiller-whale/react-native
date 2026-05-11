@@ -1,18 +1,24 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import BottomSheet from "@gorhom/bottom-sheet";
 import { useContext, useRef } from "react";
 import { StyleSheet, View } from "react-native";
+import {
+  type StaticScreenProps,
+  useNavigation,
+} from "@react-navigation/native";
 import Toast from "react-native-root-toast";
 import { spacing, styles } from "../../../lib/styles.ts";
 import { DispatchContext } from "../State.ts";
-import Button from "./Button.tsx";
-import TextInput from "./TextInput.tsx";
+import Button from "../components/Button.tsx";
+import TextInput from "../components/TextInput.tsx";
+import type { NavigationProp } from "../RootStack.tsx";
 
-type Props = {
-  articleId: string;
-};
+type Props = StaticScreenProps<{
+  id: string;
+}>;
 
-const ArticleFeedback = ({ articleId }: Props) => {
+const ArticleFeedback = ({ route }: Props) => {
+  const { id } = route.params;
+  const navigation = useNavigation<NavigationProp>();
   const dispatch = useContext(DispatchContext);
 
   return (
@@ -27,9 +33,7 @@ const ArticleFeedback = ({ articleId }: Props) => {
       </View>
       <TextInput placeholder="Leave a comment" multiline={true} />
       <Button
-        onPress={() => {
-          dispatch({ type: "submitFeedback", articleId });
-        }}
+        onPress={() => {}}
         title="Submit"
       />
     </View>

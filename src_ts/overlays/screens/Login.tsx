@@ -1,4 +1,4 @@
-import { useFocusEffect } from "@react-navigation/native";
+import { type StaticScreenProps, useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
 import { BackHandler, StyleSheet, View } from "react-native";
 import { colors, spacing, styles } from "../../../lib/styles.ts";
@@ -6,7 +6,7 @@ import { StyledText as Text } from "../../../lib/typography.tsx";
 import { DispatchContext } from "../State.ts";
 import Button from "../components/Button.tsx";
 import TextInput from "../components/TextInput.tsx";
-import type { BaseStackScreenProps } from "../routes.ts";
+import type { NavigationProp } from "../RootStack.tsx";
 
 type Props = {
   automatic: boolean;
@@ -14,10 +14,13 @@ type Props = {
   goBack: () => void;
 };
 
-// type Props = BaseStackScreenProps<"Login">;
+// type Props = StaticScreenProps<{
+//   automatic: boolean;
+// }>;
 
 const LoginModal = ({ automatic, goHome, goBack }: Props) => {
   const dispatch = useContext(DispatchContext);
+  const navigation = useNavigation<NavigationProp>();
 
   const login = () => {
     dispatch({ type: "login" });

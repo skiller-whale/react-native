@@ -8,22 +8,18 @@ import ArticleScreen from "./screens/Article.jsx";
 import HomeScreen from "./screens/Home.jsx";
 import LoginModal from "./screens/Login.jsx";
 
-const Stack = createNativeStackNavigator();
-
-const RootStack = () => (
-  <Stack.Navigator
-    initialRouteName="Home"
-    screenOptions={{
-      headerStyle: { backgroundColor: colors.orcaBlue },
-      headerTintColor: colors.white,
-      headerTitleStyle: { fontFamily: fontFamilies.sans },
-      headerRight: LoginButton,
-    }}
-  >
-    <Stack.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{
+const RootStack = createNativeStackNavigator({
+  initialRouteName: "Home",
+  screenOptions: {
+    headerStyle: { backgroundColor: colors.orcaBlue },
+    headerTintColor: colors.white,
+    headerTitleStyle: { fontFamily: fontFamilies.sans },
+    headerRight: LoginButton,
+  },
+  screens: {
+    Home: {
+      screen: HomeScreen,
+      options: {
         headerLeft: () => (
           <View style={{ paddingRight: spacing.md }}>
             <MaterialCommunityIcons
@@ -34,20 +30,19 @@ const RootStack = () => (
           </View>
         ),
         headerTitle: "The Daily Whale",
-      }}
-    />
-    <Stack.Screen
-      name="Article"
-      component={ArticleScreen}
-      options={({ route }) => {
+      },
+    },
+    Article: {
+      screen: ArticleScreen,
+      options: ({ route }) => {
         const { id } = route.params;
         const title =
           articles.find((article) => article.id === id)?.title ??
           "Article not found.";
         return { title };
-      }}
-    />
-  </Stack.Navigator>
-);
+      },
+    },
+  },
+});
 
 export default RootStack;
