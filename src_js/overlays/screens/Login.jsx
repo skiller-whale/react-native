@@ -1,4 +1,4 @@
-import { useFocusEffect } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
 import { BackHandler, StyleSheet, View } from "react-native";
 import { colors, spacing, styles } from "../../../lib/styles.ts";
@@ -9,6 +9,7 @@ import TextInput from "../components/TextInput.jsx";
 
 const LoginModal = ({ automatic, goHome, goBack }) => {
   const dispatch = useContext(DispatchContext);
+  const navigation = useNavigation();
 
   const login = () => {
     dispatch({ type: "login" });
@@ -50,7 +51,7 @@ const modalStyles = StyleSheet.create({
   wrapper: {},
   container: {
     width: "80%",
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     ...styles.shadow,
   },
   header: {

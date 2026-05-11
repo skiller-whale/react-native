@@ -1,4 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { createStaticNavigation } from "@react-navigation/native";
 import { useReducer } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { RootSiblingParent } from "react-native-root-siblings";
@@ -6,24 +6,24 @@ import { styles } from "../../lib/styles.ts";
 import RootStack from "./RootStack.jsx";
 import {
   DispatchContext,
-  StateContext,
   initialState,
+  StateContext,
   stateReducer,
 } from "./State.js";
+
+const NavigationContainer = createStaticNavigation(RootStack);
 
 const App = () => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
   return (
-    <NavigationContainer>
-      <StateContext.Provider value={state}>
-        <DispatchContext.Provider value={dispatch}>
-          <RootSiblingParent>
-            <RootStack />
-          </RootSiblingParent>
-        </DispatchContext.Provider>
-      </StateContext.Provider>
-    </NavigationContainer>
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        <RootSiblingParent>
+          <NavigationContainer />
+        </RootSiblingParent>
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   );
 };
 

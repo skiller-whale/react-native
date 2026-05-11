@@ -3,11 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
 import { Alert, Pressable } from "react-native";
 import { colors, spacing } from "../../../lib/styles.ts";
+import type { NavigationProp } from "../RootStack.tsx";
 import { DispatchContext, StateContext } from "../State.ts";
-import type { BaseStackScreenProps } from "../routes.ts";
 
 const LoginButton = () => {
-  const navigation = useNavigation<BaseStackScreenProps["navigation"]>();
+  const navigation = useNavigation<NavigationProp>();
 
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);

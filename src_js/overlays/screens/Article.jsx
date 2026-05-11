@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { Modal, ScrollView, StyleSheet, View } from "react-native";
 import articles from "../../../lib/data/articles.ts";
 import {
@@ -10,10 +11,12 @@ import {
 } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import { StateContext } from "../State.js";
-import ArticleFeedback from "../components/ArticleFeedback.jsx";
+import Button from "../components/Button.jsx";
 import LoginModal from "../screens/Login.jsx";
 
-const ArticleScreen = ({ navigation, route }) => {
+const ArticleScreen = ({ route }) => {
+  const navigation = useNavigation();
+
   // find article
   const { id } = route.params;
   const article = articles.find((article) => article.id === id);
@@ -53,9 +56,9 @@ const ArticleScreen = ({ navigation, route }) => {
           ))}
         </View>
       </ScrollView>
-      {/* {state.loggedIn && !state.articlesWithFeedback.includes(article.id) ? (
-        <ArticleFeedback articleId={article.id} />
-      ) : null} */}
+      {state.loggedIn && !state.articlesWithFeedback.includes(article.id) ? (
+        <Button onPress={() => {}} title="Give feedback" />
+      ) : null}
     </View>
   );
 };

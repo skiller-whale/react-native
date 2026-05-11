@@ -1,14 +1,16 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import BottomSheet from "@gorhom/bottom-sheet";
 import { useContext, useRef } from "react";
 import { StyleSheet, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Toast from "react-native-root-toast";
 import { spacing, styles } from "../../../lib/styles.ts";
 import { DispatchContext } from "../State.js";
-import Button from "./Button.jsx";
-import TextInput from "./TextInput.jsx";
+import Button from "../components/Button.jsx";
+import TextInput from "../components/TextInput.jsx";
 
-const ArticleFeedback = ({ articleId }) => {
+const ArticleFeedback = ({ route }) => {
+  const { id } = route.params;
+  const navigation = useNavigation();
   const dispatch = useContext(DispatchContext);
 
   return (
@@ -22,12 +24,7 @@ const ArticleFeedback = ({ articleId }) => {
         <MaterialCommunityIcons name="star" size={24} color="blue" />
       </View>
       <TextInput placeholder="Leave a comment" multiline={true} />
-      <Button
-        onPress={() => {
-          dispatch({ type: "submitFeedback", articleId });
-        }}
-        title="Submit"
-      />
+      <Button onPress={() => {}} title="Submit" />
     </View>
   );
 };
