@@ -15,13 +15,10 @@ const CategoryScreen = ({ tag }) => {
       contentContainerStyle={categoryScreenStyles.container}
       data={articles.filter((article) => article.tag.includes(tag))}
       ListHeaderComponent={() => (
-        <Pressable
-          style={categoryScreenStyles.header}
-          onPress={() => navigation.openDrawer()}
-        >
-          <Text>Category: {toTitleCase(tag)}</Text>
+        <View style={categoryScreenStyles.header}>
+          <Text>Category: {tag}</Text>
           <MaterialCommunityIcons name="arrow-down" size={24} color="black" />
-        </Pressable>
+        </View>
       )}
       renderItem={({ item }) => (
         <View style={categoryScreenStyles.link}>

@@ -6,7 +6,6 @@ import { colors, spacing, styles } from "../../../lib/styles.ts";
 import { StyledText as Text } from "../../../lib/typography.tsx";
 import Link from "../components/Link.tsx";
 import type { NavigationProp } from "../navigators/CategoriesDrawer.tsx";
-import { toTitleCase } from "../utils.ts";
 
 type Props = {
   tag: ArticleTag;
@@ -21,13 +20,10 @@ const CategoryScreen = ({ tag }: Props) => {
       contentContainerStyle={categoryScreenStyles.container}
       data={articles.filter((article) => article.tag.includes(tag))}
       ListHeaderComponent={() => (
-        <Pressable
-          style={categoryScreenStyles.header}
-          onPress={() => navigation.openDrawer()}
-        >
-          <Text>Category: {toTitleCase(tag)}</Text>
+        <View style={categoryScreenStyles.header}>
+          <Text>Category: {tag}</Text>
           <MaterialCommunityIcons name="arrow-down" size={24} color="black" />
-        </Pressable>
+        </View>
       )}
       renderItem={({ item }) => (
         <View style={categoryScreenStyles.link}>
